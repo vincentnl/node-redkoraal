@@ -1,0 +1,12 @@
+{
+    "name": "Node-Red",
+    "description": "Node-Red",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows_SERVER.json",
+            "credentialsFile": "flows_SERVER_cred.json"
+        }
+    }
+}
