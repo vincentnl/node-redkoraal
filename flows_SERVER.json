@@ -35,16 +35,16 @@
         "info": ""
     },
     {
-        "id": "375d1e4f.6a9d22",
+        "id": "aa9f90ed.25077",
         "type": "tab",
-        "label": "Devices Net",
+        "label": "Badkamer WC Slaapkamer",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "aa9f90ed.25077",
+        "id": "375d1e4f.6a9d22",
         "type": "tab",
-        "label": "Badkamer WC Slaapkamer",
+        "label": "Devices Net",
         "disabled": false,
         "info": ""
     },
@@ -59,6 +59,13 @@
         "id": "3aed527a.e169fe",
         "type": "tab",
         "label": "Weather",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "88d7a865.0b5458",
+        "type": "tab",
+        "label": "Magic cube",
         "disabled": false,
         "info": ""
     },
@@ -420,28 +427,6 @@
         ]
     },
     {
-        "id": "851545fd.080be8",
-        "type": "subflow",
-        "name": "Message",
-        "info": "Topic:\n    Topic of the message\n\nPayload:\n    Message\n\nAction: (Optional)\n    Category for choices",
-        "category": "Notify",
-        "in": [
-            {
-                "x": 60,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "f874086d.554d28"
-                    },
-                    {
-                        "id": "bc790893.3aaa08"
-                    }
-                ]
-            }
-        ],
-        "out": []
-    },
-    {
         "id": "405d007b.0887d",
         "type": "subflow",
         "name": "If At Home",
@@ -555,7 +540,7 @@
     {
         "id": "bfd62bd3.8ae858",
         "type": "subflow",
-        "name": "Ios topic",
+        "name": "Notification",
         "info": "Topic:\n    Topic of the message\nPayload:\n    Message\nAction: (Optional)\n    Category for choices",
         "category": "Notify",
         "in": [
@@ -564,12 +549,30 @@
                 "y": 30,
                 "wires": [
                     {
-                        "id": "27a5ebe1.345034"
+                        "id": "5a57c15.62b224"
                     }
                 ]
             }
         ],
-        "out": []
+        "out": [],
+        "env": [
+            {
+                "name": "message",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "topic",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "action",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "color": "#DDAA99"
     },
     {
         "id": "fd7dbe32.1f2d2",
@@ -613,16 +616,6 @@
         "willPayload": ""
     },
     {
-        "id": "f8bbaad3.3e5e08",
-        "type": "configNode",
-        "z": "",
-        "client_id": "5932a36829977ec9298b5113",
-        "client_secret": "NJ1fv1TXeo5UNvsXYaWEACA0idQ5M9QQkhH",
-        "username": "vincent@vanderkruit.com",
-        "password": "626gti",
-        "device_id": "70:ee:50:03:c6:54"
-    },
-    {
         "id": "76eac5e0.de774c",
         "type": "MySQLdatabase",
         "z": "",
@@ -632,132 +625,16 @@
         "tz": ""
     },
     {
-        "id": "25524eee.76b162",
-        "type": "ui_base",
-        "z": "aaabbee3.5276e",
-        "theme": {
-            "themeState": {
-                "page-titlebar-backgroundColor": {
-                    "edited": false,
-                    "value": "#0094CE"
-                },
-                "widget-textColor": {
-                    "edited": false,
-                    "value": "#111111"
-                },
-                "page-sidebar-backgroundColor": {
-                    "edited": false,
-                    "value": "#ffffff"
-                },
-                "widget-backgroundColor": {
-                    "edited": false,
-                    "value": "#0094ce"
-                },
-                "page-backgroundColor": {
-                    "edited": false,
-                    "value": "#fafafa"
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                },
-                "group-borderColor": {
-                    "edited": false,
-                    "value": "#ffffff"
-                },
-                "widget-borderColor": {
-                    "edited": false,
-                    "value": "#ffffff"
-                },
-                "group-backgroundColor": {
-                    "edited": false,
-                    "value": "#ffffff"
-                },
-                "group-textColor": {
-                    "edited": false,
-                    "value": "#1bbfff"
-                },
-                "base-color": {
-                    "edited": false,
-                    "default": "#0094CE",
-                    "value": "#0094CE"
-                }
-            },
-            "darkTheme": {
-                "baseColor": "#097479",
-                "edited": false,
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "default": "#097479"
-            },
-            "lightTheme": {
-                "baseColor": "#0094CE",
-                "edited": true,
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "default": "#0094CE",
-                "reset": false
-            },
-            "name": "theme-light",
-            "customTheme": {
-                "baseColor": "#4B7930",
-                "default": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "name": "Untitled Theme 1"
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey"
-            }
-        },
-        "site": {
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "py": 0,
-                "sy": 48,
-                "gy": 6,
-                "px": 0,
-                "sx": 48,
-                "cx": 6,
-                "gx": 6,
-                "cy": 6
-            },
-            "name": "Node-RED Dashboard",
-            "allowSwipe": "false",
-            "allowTempTheme": "true",
-            "hideToolbar": "false"
-        }
-    },
-    {
-        "id": "2d0ac9e0.3469a6",
-        "type": "darksky-credentials",
-        "z": "",
-        "key_identifier": "vincent@vanderkruit.com"
-    },
-    {
-        "id": "e6eadaf8.394978",
-        "type": "lgtv-config",
-        "z": "",
-        "host": "192.168.1.92"
-    },
-    {
-        "id": "6b04c042.321",
-        "type": "lgtv-config",
-        "z": "",
-        "host": "192.168.1.97"
-    },
-    {
-        "id": "7f128864.aa8628",
-        "type": "lgtv-config",
-        "z": "",
-        "host": "192.168.1.95"
-    },
-    {
         "id": "a0b35919.2f8bf8",
         "type": "server",
         "z": "",
         "name": "Home Assistant",
-        "url": "http://192.168.1.100:8123",
-        "pass": ""
+        "legacy": false,
+        "hassio": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
     },
     {
         "id": "7906960.7effd6c",
@@ -791,58 +668,13 @@
         "wires": []
     },
     {
-        "id": "605e147d.4aa46c",
-        "type": "get stations data",
-        "z": "f8c3d2e.ff7853",
-        "name": "",
-        "creds": "f8bbaad3.3e5e08",
-        "x": 300,
-        "y": 235,
-        "wires": [
-            [
-                "7b8f11ab.b8a3d",
-                "f3b67a92.acb3c8",
-                "cd54c06.6a6a14",
-                "6a19663c.d8f6b8",
-                "3f3b2baa.5c6ca4",
-                "d3f6861.b133e78",
-                "4e204246.bc63cc",
-                "37f83339.d8587c",
-                "de081e6a.0562d",
-                "855291ba.6c56c",
-                "23f7dd3d.39d532",
-                "a829e911.8249e8"
-            ]
-        ]
-    },
-    {
-        "id": "4f0b82fe.c3206c",
-        "type": "inject",
-        "z": "f8c3d2e.ff7853",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 122,
-        "y": 236,
-        "wires": [
-            [
-                "605e147d.4aa46c"
-            ]
-        ]
-    },
-    {
         "id": "59615a3c.b2e714",
         "type": "mysql",
         "z": "f8c3d2e.ff7853",
         "mydb": "76eac5e0.de774c",
         "name": "TimeSeries",
-        "x": 1096,
-        "y": 236,
+        "x": 1270,
+        "y": 240,
         "wires": [
             [
                 "26eb4d03.fc3132"
@@ -860,8 +692,8 @@
         "syntax": "mustache",
         "template": "INSERT INTO measurements (location,name,devicetype,messagetype,system,extra,value) VALUES (\"{{location}}\",\"{{name}}\",\"{{devicetype}}\",\"{{messagetype}}\",\"{{system}}\",\"{{extra}}\",{{value}});",
         "output": "str",
-        "x": 871,
-        "y": 240,
+        "x": 1160,
+        "y": 320,
         "wires": [
             [
                 "59615a3c.b2e714",
@@ -914,7 +746,7 @@
                 "t": "set",
                 "p": "value",
                 "pt": "msg",
-                "to": "payload.devices[0].dashboard_data.Temperature",
+                "to": "payload",
                 "tot": "msg"
             },
             {
@@ -934,7 +766,7 @@
         "y": 92,
         "wires": [
             [
-                "17991179.5dce5f"
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -948,8 +780,8 @@
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 1222,
-        "y": 391,
+        "x": 1390,
+        "y": 420,
         "wires": []
     },
     {
@@ -997,7 +829,7 @@
                 "t": "set",
                 "p": "value",
                 "pt": "msg",
-                "to": "payload.devices[0].dashboard_data.CO2",
+                "to": "payload",
                 "tot": "msg"
             },
             {
@@ -1017,7 +849,7 @@
         "y": 150,
         "wires": [
             [
-                "17991179.5dce5f"
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -1066,7 +898,7 @@
                 "t": "set",
                 "p": "value",
                 "pt": "msg",
-                "to": "payload.devices[0].dashboard_data.Humidity",
+                "to": "payload",
                 "tot": "msg"
             },
             {
@@ -1086,7 +918,7 @@
         "y": 206,
         "wires": [
             [
-                "17991179.5dce5f"
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -1135,7 +967,7 @@
                 "t": "set",
                 "p": "value",
                 "pt": "msg",
-                "to": "payload.devices[0].dashboard_data.Pressure",
+                "to": "payload",
                 "tot": "msg"
             },
             {
@@ -1155,490 +987,7 @@
         "y": 258,
         "wires": [
             [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "3f3b2baa.5c6ca4",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Rain",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "regenmeter",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "rain",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[0].dashboard_data.Rain",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 491,
-        "y": 309,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "d3f6861.b133e78",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside Temperature",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "temperature",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[1].dashboard_data.Temperature",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 536,
-        "y": 369,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "4e204246.bc63cc",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside Humidity",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "humidity",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[1].dashboard_data.Humidity",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 526,
-        "y": 432,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "37f83339.d8587c",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside WindStrength",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "windStrength",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[2].dashboard_data.WindStrength",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 539,
-        "y": 494,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "de081e6a.0562d",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside WindAngle",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "windStrength",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[2].dashboard_data.WindAngle",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 537,
-        "y": 550,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "23f7dd3d.39d532",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside GustAngle",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "gustAngle",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[2].dashboard_data.GustAngle",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 527,
-        "y": 671,
-        "wires": [
-            [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "855291ba.6c56c",
-        "type": "change",
-        "z": "f8c3d2e.ff7853",
-        "name": "Set Outside GustStrength",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "terras",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "outdoorstation",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "gustStrength",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "netatmo",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.devices[0].modules[2].dashboard_data.GustStrength",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 535,
-        "y": 610,
-        "wires": [
-            [
-                "17991179.5dce5f"
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -1801,8 +1150,8 @@
         "atstart": true,
         "odd": false,
         "even": false,
-        "x": 111,
-        "y": 145.00000476837158,
+        "x": 200,
+        "y": 140,
         "wires": [
             [
                 "27df7afb.f56b76"
@@ -1810,16 +1159,6 @@
             [],
             []
         ]
-    },
-    {
-        "id": "6f0ea14c.a6707",
-        "type": "comment",
-        "z": "b01a2cb9.9baef",
-        "name": "Can be Removed",
-        "info": "",
-        "x": 141,
-        "y": 470,
-        "wires": []
     },
     {
         "id": "7a91a568.b2f25c",
@@ -1830,45 +1169,14 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 111,
-        "y": 170,
+        "x": 110,
+        "y": 800,
         "wires": [
             [
                 "9195586.c6bf2a8",
-                "6e20ef0d.f3bfb"
+                "6e20ef0d.f3bfb",
+                "9224c6c.1c36a38"
             ]
-        ]
-    },
-    {
-        "id": "4d2a1b8d.6e1794",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Exit house",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Exit house",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "status",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 591.9999771118164,
-        "y": 660.9999370574951,
-        "wires": [
-            []
         ]
     },
     {
@@ -1897,45 +1205,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 342,
-        "y": 248,
+        "x": 341,
+        "y": 878,
         "wires": [
             [
                 "e273f18e.9ccdc",
                 "6fb40943.716008"
             ]
-        ]
-    },
-    {
-        "id": "38f6ba0e.2cf046",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "AtHome true",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "athome",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 354,
-        "y": 570,
-        "wires": [
-            []
         ]
     },
     {
@@ -1945,27 +1221,9 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 331,
-        "y": 170,
+        "x": 330,
+        "y": 800,
         "wires": []
-    },
-    {
-        "id": "3c4d7b4c.9fc614",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "Exit Home",
-        "url": "/exithome",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 101,
-        "y": 650,
-        "wires": [
-            [
-                "5b3d3fc7.e844",
-                "581813d2.79cb0c"
-            ]
-        ]
     },
     {
         "id": "a7aed069.6a836",
@@ -1993,47 +1251,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 339.1238250732422,
-        "y": 313.7523422241211,
+        "x": 338.1238250732422,
+        "y": 943.7523422241211,
         "wires": [
             [
                 "22295877.bc5ee8",
                 "4571dfe7.99cc9",
                 "6fb40943.716008"
-            ]
-        ]
-    },
-    {
-        "id": "581813d2.79cb0c",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "AtHome false",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "false",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "athome",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 353,
-        "y": 649,
-        "wires": [
-            [
-                "4d2a1b8d.6e1794"
             ]
         ]
     },
@@ -2046,41 +1270,13 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 121,
-        "y": 250,
+        "x": 120,
+        "y": 880,
         "wires": [
             [
                 "9195586.c6bf2a8",
-                "a7aed069.6a836"
-            ]
-        ]
-    },
-    {
-        "id": "5b3d3fc7.e844",
-        "type": "http response",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 331,
-        "y": 510,
-        "wires": []
-    },
-    {
-        "id": "ceb79811.bb0168",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "Enter Home",
-        "url": "/enterhome",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 111,
-        "y": 570,
-        "wires": [
-            [
-                "5b3d3fc7.e844",
-                "38f6ba0e.2cf046"
+                "a7aed069.6a836",
+                "9224c6c.1c36a38"
             ]
         ]
     },
@@ -2090,29 +1286,9 @@
         "z": "b01a2cb9.9baef",
         "name": "Manage Bed status",
         "info": "",
-        "x": 151,
-        "y": 90,
+        "x": 130,
+        "y": 720,
         "wires": []
-    },
-    {
-        "id": "f2a50e98.dad85",
-        "type": "http in",
-        "z": "aaabbee3.5276e",
-        "name": "New weight",
-        "url": "/newweight",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 92,
-        "y": 356,
-        "wires": [
-            [
-                "26393fd5.bb8fe",
-                "b2187c63.9afd9",
-                "632817d.2f78ae8",
-                "215560f7.86563"
-            ]
-        ]
     },
     {
         "id": "dcf96f6.c0f439",
@@ -2204,17 +1380,6 @@
                 "dcf96f6.c0f439"
             ]
         ]
-    },
-    {
-        "id": "26393fd5.bb8fe",
-        "type": "http response",
-        "z": "aaabbee3.5276e",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 147,
-        "y": 244,
-        "wires": []
     },
     {
         "id": "c1a9dd4b.ece17",
@@ -2432,41 +1597,6 @@
         ]
     },
     {
-        "id": "ffcfd4e1.307568",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "x": 610,
-        "y": 180,
-        "wires": [
-            [
-                "7c6c9d38.16fbf4"
-            ],
-            [
-                "cb514997.0b2228"
-            ]
-        ]
-    },
-    {
-        "id": "e1e1e718.159648",
-        "type": "exec",
-        "z": "375d1e4f.6a9d22",
-        "command": "C:\\WoL\\shutdownServer.bat",
-        "addpay": true,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "Shutdown Server",
-        "x": 814.0000228881836,
-        "y": 327.99998903274536,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "155172dd.afa01d",
         "type": "change",
         "z": "acc34840.af99d8",
@@ -2492,43 +1622,6 @@
         ]
     },
     {
-        "id": "96b9a739.a0bab8",
-        "type": "debug",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 1150,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "220380b9.a768",
-        "type": "subflow:851545fd.080be8",
-        "z": "3aed527a.e169fe",
-        "name": "",
-        "x": 1390,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "a4f4134a.4c4c8",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "x": 570,
-        "y": 520,
-        "wires": [
-            [],
-            [
-                "8126fafe.dc5668"
-            ]
-        ]
-    },
-    {
         "id": "1b398784.d69528",
         "type": "change",
         "z": "3aed527a.e169fe",
@@ -2550,45 +1643,7 @@
         "x": 1140,
         "y": 200,
         "wires": [
-            [
-                "220380b9.a768"
-            ]
-        ]
-    },
-    {
-        "id": "bdb8d7f8.d7a2a8",
-        "type": "inject",
-        "z": "3aed527a.e169fe",
-        "name": "AwakeTime",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "*/5 7-23 * * *",
-        "once": true,
-        "onceDelay": "300",
-        "x": 130,
-        "y": 200,
-        "wires": [
-            [
-                "93355f5d.e5a0d"
-            ]
-        ]
-    },
-    {
-        "id": "a6eb7664.685838",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "x": 570,
-        "y": 420,
-        "wires": [
-            [
-                "1aa6a9e8.b0d866"
-            ],
-            [
-                "7b582a51.8e9e74"
-            ]
+            []
         ]
     },
     {
@@ -2642,31 +1697,6 @@
         "x": 700,
         "y": 260,
         "wires": []
-    },
-    {
-        "id": "f874086d.554d28",
-        "type": "change",
-        "z": "851545fd.080be8",
-        "name": "Remove topic",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 180,
-        "wires": [
-            [
-                "cbdf249e.9a02f8"
-            ]
-        ]
     },
     {
         "id": "9dc653a4.ae4e2",
@@ -2821,20 +1851,6 @@
         ]
     },
     {
-        "id": "41ecc9af.4ef048",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "x": 590,
-        "y": 640,
-        "wires": [
-            [],
-            [
-                "711132f6.3ffa4c"
-            ]
-        ]
-    },
-    {
         "id": "ebf33a61.e43d68",
         "type": "rbe",
         "z": "3aed527a.e169fe",
@@ -2905,48 +1921,6 @@
         "x": 270,
         "y": 320,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8126fafe.dc5668",
-        "type": "change",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "turnOff",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 778,
-        "y": 522,
-        "wires": [
-            [
-                "8b40435a.8ddac",
-                "e12b78d9.6f2c38"
-            ]
-        ]
-    },
-    {
-        "id": "2f122f31.88c49",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "x": 570,
-        "y": 720,
-        "wires": [
-            [
-                "4ac8a620.3555e8"
-            ],
             []
         ]
     },
@@ -3152,19 +2126,6 @@
         ]
     },
     {
-        "id": "cbdf249e.9a02f8",
-        "type": "mqtt out",
-        "z": "851545fd.080be8",
-        "name": "",
-        "topic": "koraal/echo/say/command/echo",
-        "qos": "",
-        "retain": "",
-        "broker": "e33aa8df.806938",
-        "x": 490,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "e2e5cc54.c5c38",
         "type": "comment",
         "z": "a8c1ffd8.16e1",
@@ -3187,18 +2148,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "a7a23f47.b0b58",
-        "type": "prowl",
-        "z": "3aed527a.e169fe",
-        "title": "Weather Warning",
-        "priority": 0,
-        "url": "Weather Warning",
-        "name": "",
-        "x": 1190,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "e77df78b.ed9e58",
@@ -3259,20 +2208,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "6b731e8b.83811",
-        "type": "debug",
-        "z": "3aed527a.e169fe",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 443,
-        "y": 499.99999046325684,
-        "wires": []
     },
     {
         "id": "7456bf90.ca8d1",
@@ -3393,45 +2328,6 @@
             ],
             [
                 "b571e1ee.e4fbc"
-            ]
-        ]
-    },
-    {
-        "id": "29874dc1.583062",
-        "type": "prowl",
-        "z": "851545fd.080be8",
-        "title": "",
-        "priority": "-2",
-        "url": "",
-        "name": "",
-        "x": 230,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "711132f6.3ffa4c",
-        "type": "change",
-        "z": "375d1e4f.6a9d22",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "turnOff",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 783,
-        "y": 643,
-        "wires": [
-            [
-                "4b7ad036.191d1"
             ]
         ]
     },
@@ -3610,22 +2506,6 @@
         ]
     },
     {
-        "id": "c3a17558.8cbda8",
-        "type": "subflow:8a844107.6e076",
-        "z": "375d1e4f.6a9d22",
-        "name": "On/Off",
-        "x": 584.0000228881836,
-        "y": 287.99998903274536,
-        "wires": [
-            [
-                "69441586.008c0c"
-            ],
-            [
-                "e1e1e718.159648"
-            ]
-        ]
-    },
-    {
         "id": "553cbc2d.6829a4",
         "type": "change",
         "z": "3aed527a.e169fe",
@@ -3656,74 +2536,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "4b7ad036.191d1",
-        "type": "lgtv-control",
-        "z": "375d1e4f.6a9d22",
-        "tv": "e6eadaf8.394978",
-        "name": "bedroom tv",
-        "x": 984,
-        "y": 645,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8b40435a.8ddac",
-        "type": "lgtv-control",
-        "z": "375d1e4f.6a9d22",
-        "tv": "6b04c042.321",
-        "name": "livingroom tv wifi",
-        "x": 980.0000267028809,
-        "y": 472.00001525878906,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "93355f5d.e5a0d",
-        "type": "darksky",
-        "z": "3aed527a.e169fe",
-        "darksky": "2d0ac9e0.3469a6",
-        "name": "",
-        "lon": "4.200080",
-        "lat": "51.999520",
-        "date": "",
-        "time": "",
-        "mode": "node",
-        "lang": "en",
-        "units": "si",
-        "x": 300,
-        "y": 200,
-        "wires": [
-            [
-                "e77df78b.ed9e58",
-                "553cbc2d.6829a4"
-            ]
-        ]
-    },
-    {
-        "id": "69441586.008c0c",
-        "type": "wake on lan",
-        "z": "375d1e4f.6a9d22",
-        "mac": "70:85:C2:02:22:71",
-        "host": "192.168.1.101",
-        "name": "Server",
-        "x": 774.0000228881836,
-        "y": 247.99998903274536,
-        "wires": []
-    },
-    {
-        "id": "4ac8a620.3555e8",
-        "type": "wake on lan",
-        "z": "375d1e4f.6a9d22",
-        "mac": "50:1A:C5:B0:68:4E",
-        "host": "192.168.1.94",
-        "name": "Xbox",
-        "x": 730,
-        "y": 720,
-        "wires": []
     },
     {
         "id": "c0e338b3.3817b8",
@@ -3758,12 +2570,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 586,
-        "y": 812,
+        "x": 620,
+        "y": 800,
         "wires": [
             [
-                "17991179.5dce5f",
-                "3c9c56c6.e27d4a"
+                "3c9c56c6.e27d4a",
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -3773,8 +2585,8 @@
         "z": "f8c3d2e.ff7853",
         "name": "NetAtmo",
         "info": "",
-        "x": 140,
-        "y": 88,
+        "x": 100,
+        "y": 40,
         "wires": []
     },
     {
@@ -3822,7 +2634,7 @@
                 "t": "set",
                 "p": "value",
                 "pt": "msg",
-                "to": "payload.devices[0].dashboard_data.Noise",
+                "to": "payload",
                 "tot": "msg"
             },
             {
@@ -3842,281 +2654,9 @@
         "y": 728,
         "wires": [
             [
-                "17991179.5dce5f"
+                "38d26b7.a551a94"
             ]
         ]
-    },
-    {
-        "id": "33808f46.e28cd",
-        "type": "function",
-        "z": "f4f34383.c51b7",
-        "name": "set var",
-        "func": "flow.set(\"i\", 0);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 354.00000190734863,
-        "y": 292.99999237060547,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3710ac16.36e374",
-        "type": "delay",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 524.0000019073486,
-        "y": 372.99999237060547,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dc49ea27.0027a8",
-        "type": "inject",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 118.99999618530273,
-        "y": 459.9999885559082,
-        "wires": [
-            [
-                "ad2bdf7e.04602"
-            ]
-        ]
-    },
-    {
-        "id": "4978314d.17698",
-        "type": "function",
-        "z": "f4f34383.c51b7",
-        "name": "change rgb",
-        "func": "var i = flow.get(\"i\");\nvar red   = Math.round(Math.sin(0.3*i + 0) * 127 + 128);\nvar green = Math.round(Math.sin(0.3*i + 2) * 127 + 128);\nvar blue  = Math.round(Math.sin(0.3*i + 4) * 127 + 128);\n\ni++;\nif (i>=32) {\n    i = 0;\n}\n\nflow.set(\"i\", i);\n\nmsg.payload = [red, green, blue]\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 534.0000019073486,
-        "y": 292.99999237060547,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "57d97f37.8834",
-        "type": "change",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "Set Temperature",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "kantoor",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "thermostat",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "temperature",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "nest",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.ambient_temperature_c",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 514.9953308105469,
-        "y": 599.9999198913574,
-        "wires": [
-            [
-                "da83236f.5826c"
-            ]
-        ]
-    },
-    {
-        "id": "297102e.db62ffe",
-        "type": "change",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "Set Humidity",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "kantoor",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "thermostat",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "humidity",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "nest",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.humidity",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 501.9953193664551,
-        "y": 663.2727003097534,
-        "wires": [
-            [
-                "da83236f.5826c"
-            ]
-        ]
-    },
-    {
-        "id": "390574e7.7a61ec",
-        "type": "inject",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "300",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "60",
-        "x": 80.00000762939453,
-        "y": 598.6364574432373,
-        "wires": [
-            [
-                "12700b6f.af9375"
-            ]
-        ]
-    },
-    {
-        "id": "12700b6f.af9375",
-        "type": "http request",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "Thermostat Data",
-        "method": "GET",
-        "ret": "obj",
-        "url": "http://localhost/iotserver/api/nest/thermostat/data",
-        "tls": "",
-        "x": 284.7812957763672,
-        "y": 599.1109590530396,
-        "wires": [
-            [
-                "297102e.db62ffe",
-                "57d97f37.8834",
-                "a6c73288.2fe38"
-            ]
-        ]
-    },
-    {
-        "id": "e8735c1b.f1efa",
-        "type": "debug",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 889.9858741760254,
-        "y": 683.3579635620117,
-        "wires": []
-    },
-    {
-        "id": "da83236f.5826c",
-        "type": "link out",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "dataThermostat",
-        "links": [
-            "8e5776c.c2bfa88"
-        ],
-        "x": 714.0000238418579,
-        "y": 682.9999189376831,
-        "wires": []
     },
     {
         "id": "8e5776c.c2bfa88",
@@ -4126,81 +2666,11 @@
         "links": [
             "da83236f.5826c"
         ],
-        "x": 646,
-        "y": 39,
+        "x": 675,
+        "y": 80,
         "wires": [
             [
-                "17991179.5dce5f"
-            ]
-        ]
-    },
-    {
-        "id": "a6c73288.2fe38",
-        "type": "change",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "Set TemperatureTarget",
-        "rules": [
-            {
-                "t": "set",
-                "p": "location",
-                "pt": "msg",
-                "to": "target",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "thermostat",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "devicetype",
-                "pt": "msg",
-                "to": "temperature",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "messagetype",
-                "pt": "msg",
-                "to": "measurement",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "system",
-                "pt": "msg",
-                "to": "nest",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "value",
-                "pt": "msg",
-                "to": "payload.target_temperature_c",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "null",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 525.0000152587891,
-        "y": 531.9999561309814,
-        "wires": [
-            [
-                "da83236f.5826c",
-                "e8735c1b.f1efa"
+                "38d26b7.a551a94"
             ]
         ]
     },
@@ -4219,8 +2689,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 711.4999847412109,
-        "y": 246.00002670288086,
+        "x": 710.4999847412109,
+        "y": 876.0000267028809,
         "wires": [
             [
                 "b4fad9fa.a26448"
@@ -4233,8 +2703,8 @@
         "z": "b01a2cb9.9baef",
         "name": "Manage Daylight",
         "info": "",
-        "x": 92,
-        "y": 778.9999332427979,
+        "x": 120,
+        "y": 60,
         "wires": []
     },
     {
@@ -4249,8 +2719,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 135,
-        "y": 941,
+        "x": 163,
+        "y": 222.00006675720215,
         "wires": [
             [
                 "a3b67c32.22b87"
@@ -4263,21 +2733,9 @@
         "z": "b01a2cb9.9baef",
         "name": "Debug daylight",
         "info": "",
-        "x": 106,
-        "y": 899,
+        "x": 134,
+        "y": 180.00006675720215,
         "wires": []
-    },
-    {
-        "id": "e12b78d9.6f2c38",
-        "type": "lgtv-control",
-        "z": "375d1e4f.6a9d22",
-        "tv": "7f128864.aa8628",
-        "name": "livingroom tv cable",
-        "x": 988,
-        "y": 538,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "26eb4d03.fc3132",
@@ -4289,8 +2747,8 @@
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 1220.3333740234375,
-        "y": 142,
+        "x": 1370,
+        "y": 100,
         "wires": []
     },
     {
@@ -4299,7 +2757,7 @@
         "z": "aa9f90ed.25077",
         "name": "WC on",
         "server": "a0b35919.2f8bf8",
-        "entityid": "switch.aeotec_zw111_nano_dimmer_switch_wc",
+        "entityid": "switch.zwave_wc",
         "debugenabled": false,
         "constraints": [
             {
@@ -4342,12 +2800,19 @@
         "z": "aa9f90ed.25077",
         "name": "WC off",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_wc\" }",
+        "entityId": "switch.zwave_wc",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 463.00001525878906,
-        "y": 454.0000057220459,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 450,
+        "y": 440,
         "wires": [
             []
         ]
@@ -4358,7 +2823,7 @@
         "z": "aa9f90ed.25077",
         "name": "Badkamer on switch",
         "server": "a0b35919.2f8bf8",
-        "entityid": "switch.aeotec_zw111_nano_dimmer_switch_badkamer",
+        "entityid": "switch.zwave_badkamer",
         "debugenabled": false,
         "constraints": [
             {
@@ -4390,105 +2855,21 @@
         "z": "aa9f90ed.25077",
         "name": "Badkamer off",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_badkamer\" }",
+        "entityId": "switch.zwave_badkamer",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
         "x": 573.9999732971191,
         "y": 122.00000190734863,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "4790b667.205188",
-        "type": "api-call-service",
-        "z": "851545fd.080be8",
-        "name": "Notify",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "notify",
-        "service": "ios_iphone",
-        "data": "",
-        "mergecontext": "",
-        "x": 765.0001678466797,
-        "y": 235.99999046325684,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6a12f04.af9a61",
-        "type": "template",
-        "z": "851545fd.080be8",
-        "name": "",
-        "field": "payload.data",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"message\":\"{{data}}\"}",
-        "output": "json",
-        "x": 614,
-        "y": 246.33332347869873,
-        "wires": [
-            [
-                "4790b667.205188",
-                "6125c8f5.3ad488"
-            ]
-        ]
-    },
-    {
-        "id": "e5ee85de.f36d38",
-        "type": "change",
-        "z": "851545fd.080be8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "msg.topic & \":\" & msg.payload",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "payload.domain",
-                "pt": "msg",
-                "to": "notify",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.service",
-                "pt": "msg",
-                "to": "ios_iphone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 421,
-        "y": 248.333327293396,
-        "wires": [
-            [
-                "6a12f04.af9a61"
-            ]
         ]
     },
     {
@@ -4541,10 +2922,17 @@
         "z": "1f8a59d.c5c0ca6",
         "name": "",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "climate",
         "service": "set_temperature",
-        "data": "{   \"entity_id\": \"climate.living_room\" }",
+        "entityId": "climate.plugwise_thermostat",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
         "x": 1257.7840576171875,
         "y": 192.6448516845703,
         "wires": [
@@ -4559,7 +2947,7 @@
         "z": "aa9f90ed.25077",
         "name": "WC movement",
         "server": "a0b35919.2f8bf8",
-        "entityid": "binary_sensor.neo_coolcam_battery_powered_pir_sensor_sensor_wc",
+        "entityid": "binary_sensor.zwave_movement_wc",
         "debugenabled": false,
         "constraints": [
             {
@@ -4591,12 +2979,19 @@
         "z": "aa9f90ed.25077",
         "name": "WC on",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_wc\" }",
+        "entityId": "switch.zwave_wc",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 325.014217376709,
-        "y": 522.0056896209717,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 310,
+        "y": 520,
         "wires": [
             []
         ]
@@ -4607,12 +3002,19 @@
         "z": "aa9f90ed.25077",
         "name": "Badkamer on",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_badkamer\" }",
+        "entityId": "switch.zwave_badkamer",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 391.0142250061035,
-        "y": 178.00566720962524,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 390,
+        "y": 160,
         "wires": [
             []
         ]
@@ -4623,7 +3025,7 @@
         "z": "aa9f90ed.25077",
         "name": "Badkamer movement",
         "server": "a0b35919.2f8bf8",
-        "entityid": "binary_sensor.neo_coolcam_battery_powered_pir_sensor_sensor_badkamer",
+        "entityid": "binary_sensor.zwave_movement_badkamer",
         "debugenabled": false,
         "constraints": [
             {
@@ -4648,293 +3050,6 @@
             ],
             []
         ]
-    },
-    {
-        "id": "cb514997.0b2228",
-        "type": "conf ping",
-        "z": "375d1e4f.6a9d22",
-        "name": "Ping PC",
-        "host": "192.168.1.99",
-        "timeout": "5",
-        "requests": "1",
-        "x": 757.5085754394531,
-        "y": 189.81817531585693,
-        "wires": [
-            [
-                "5b2cccee.2081a4"
-            ]
-        ]
-    },
-    {
-        "id": "5b2cccee.2081a4",
-        "type": "switch",
-        "z": "375d1e4f.6a9d22",
-        "name": "IsOnline?",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "0",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 916.784065246582,
-        "y": 190.5965757369995,
-        "wires": [
-            [
-                "2f8e8038.8f7e8"
-            ],
-            []
-        ],
-        "outputLabels": [
-            "Online",
-            "Offline"
-        ]
-    },
-    {
-        "id": "824d42f8.16dc8",
-        "type": "change",
-        "z": "bfd62bd3.8ae858",
-        "name": "Add choice",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.data.data.push.category",
-                "pt": "msg",
-                "to": "action",
-                "tot": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload.service",
-                "pt": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "payload.domain",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 513.0815162658691,
-        "y": 95.38077163696289,
-        "wires": [
-            [
-                "3b434fbb.23aad",
-                "1143561a.547e4a"
-            ]
-        ]
-    },
-    {
-        "id": "91789e8d.d5ae2",
-        "type": "trigger-state",
-        "z": "b01a2cb9.9baef",
-        "name": "OwnTracks home",
-        "server": "a0b35919.2f8bf8",
-        "entityid": "device_tracker.vincent_iphoneowntracks",
-        "debugenabled": false,
-        "constraints": [
-            {
-                "id": "xawxys0wt1b",
-                "targetType": "this_entity",
-                "targetValue": "",
-                "propertyType": "current_state",
-                "propertyValue": "new_state.state",
-                "comparatorType": "is",
-                "comparatorValueDatatype": "str",
-                "comparatorValue": "home"
-            }
-        ],
-        "constraintsmustmatch": "all",
-        "outputs": 2,
-        "customoutputs": [],
-        "x": 104.00946807861328,
-        "y": 1289.732738494873,
-        "wires": [
-            [
-                "35deb46a.8acc1c",
-                "633ac590.35050c"
-            ],
-            [
-                "b9e4634d.5b601",
-                "cc78b5ca.37beb8"
-            ]
-        ]
-    },
-    {
-        "id": "d142f591.832c28",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Set Vincent Home",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"input_boolean.vincent_home\" }",
-        "mergecontext": "",
-        "x": 718.9336318969727,
-        "y": 1185.0793552398682,
-        "wires": [
-            [
-                "126c3591.16ef0a"
-            ]
-        ]
-    },
-    {
-        "id": "c9915ad5.76c148",
-        "type": "trigger-state",
-        "z": "b01a2cb9.9baef",
-        "name": "Vincent Home",
-        "server": "a0b35919.2f8bf8",
-        "entityid": "input_boolean.vincent_home",
-        "debugenabled": false,
-        "constraints": [
-            {
-                "id": "bhfbklhlhmn",
-                "targetType": "this_entity",
-                "targetValue": "",
-                "propertyType": "current_state",
-                "propertyValue": "new_state.state",
-                "comparatorType": "is",
-                "comparatorValueDatatype": "str",
-                "comparatorValue": "on"
-            }
-        ],
-        "constraintsmustmatch": "all",
-        "outputs": 2,
-        "customoutputs": [],
-        "x": 109.9336929321289,
-        "y": 1441.2101345062256,
-        "wires": [
-            [
-                "25da56b1.b23faa"
-            ],
-            [
-                "875fe022.000e4"
-            ]
-        ]
-    },
-    {
-        "id": "875fe022.000e4",
-        "type": "api-current-state",
-        "z": "b01a2cb9.9baef",
-        "name": "Block If Guests",
-        "server": "a0b35919.2f8bf8",
-        "halt_if": "on",
-        "override_topic": true,
-        "override_payload": true,
-        "entity_id": "input_boolean.guests_home",
-        "x": 557.9337005615234,
-        "y": 1445.1570444107056,
-        "wires": [
-            [
-                "1aa8e45e.60c61c"
-            ]
-        ]
-    },
-    {
-        "id": "25da56b1.b23faa",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Set AtHome",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"input_boolean.at_home\" }",
-        "mergecontext": "",
-        "x": 330.9355354309082,
-        "y": 1471.7194547653198,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1aa8e45e.60c61c",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Set Not AtHome",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"input_boolean.at_home\" }",
-        "mergecontext": "",
-        "x": 783.009407043457,
-        "y": 1506.0962505340576,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "160ccf5c.8760b1",
-        "type": "trigger-state",
-        "z": "b01a2cb9.9baef",
-        "name": "Guests",
-        "server": "a0b35919.2f8bf8",
-        "entityid": "input_boolean.guests_home",
-        "debugenabled": false,
-        "constraints": [
-            {
-                "id": "3eiaofv08bj",
-                "targetType": "this_entity",
-                "targetValue": "",
-                "propertyType": "current_state",
-                "propertyValue": "new_state.state",
-                "comparatorType": "is",
-                "comparatorValueDatatype": "str",
-                "comparatorValue": "on"
-            }
-        ],
-        "constraintsmustmatch": "all",
-        "outputs": 2,
-        "customoutputs": [],
-        "x": 132.00948333740234,
-        "y": 1522.096384048462,
-        "wires": [
-            [
-                "25da56b1.b23faa"
-            ],
-            [
-                "a5baf3e6.7db71"
-            ]
-        ]
-    },
-    {
-        "id": "a5baf3e6.7db71",
-        "type": "api-current-state",
-        "z": "b01a2cb9.9baef",
-        "name": "Block If Vincent at Home",
-        "server": "a0b35919.2f8bf8",
-        "halt_if": "on",
-        "override_topic": true,
-        "override_payload": true,
-        "entity_id": "input_boolean.vincent_home",
-        "x": 371.0095443725586,
-        "y": 1557.0965614318848,
-        "wires": [
-            [
-                "1aa8e45e.60c61c"
-            ]
-        ]
-    },
-    {
-        "id": "9a877de9.75c87",
-        "type": "comment",
-        "z": "b01a2cb9.9baef",
-        "name": "Manage At Home",
-        "info": "",
-        "x": 101.00948715209961,
-        "y": 1166.3692264556885,
-        "wires": []
     },
     {
         "id": "fb483f60.c6f81",
@@ -5027,8 +3142,8 @@
         "atstart": true,
         "odd": false,
         "even": false,
-        "x": 108.93547058105469,
-        "y": 840.619306564331,
+        "x": 136.9354705810547,
+        "y": 121.6193733215332,
         "wires": [
             [
                 "a3b67c32.22b87"
@@ -5042,8 +3157,9 @@
         "type": "subflow:8a844107.6e076",
         "z": "b01a2cb9.9baef",
         "name": "",
-        "x": 298.0095024108887,
-        "y": 832.4602346420288,
+        "env": [],
+        "x": 326.0095024108887,
+        "y": 113.46030139923096,
         "wires": [
             [
                 "5c1b498d.633828"
@@ -5059,12 +3175,19 @@
         "z": "b01a2cb9.9baef",
         "name": "Turn on Daylight",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"input_boolean.daylight\" }",
+        "entityId": "input_boolean.daylight",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 480.93370819091797,
-        "y": 825.8086423873901,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 520,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5075,12 +3198,19 @@
         "z": "b01a2cb9.9baef",
         "name": "Turn off Daylight",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"input_boolean.daylight\" }",
+        "entityId": "input_boolean.daylight",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 479.0094909667969,
-        "y": 872.5510864257812,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 507.0094909667969,
+        "y": 153.5511531829834,
         "wires": [
             []
         ]
@@ -5091,10 +3221,11 @@
         "z": "35694a1c.27fc86",
         "name": "If Day",
         "server": "a0b35919.2f8bf8",
+        "outputs": 1,
         "halt_if": "off",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.daylight",
+        "override_payload": true,
         "x": 201.93558883666992,
         "y": 138.60602569580078,
         "wires": [
@@ -5107,10 +3238,11 @@
         "z": "35694a1c.27fc86",
         "name": "If Night",
         "server": "a0b35919.2f8bf8",
+        "outputs": 1,
         "halt_if": "on",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.daylight",
+        "override_payload": true,
         "x": 209.00946807861328,
         "y": 239.00566959381104,
         "wires": [
@@ -5126,11 +3258,7 @@
         "y": 124.00564098358154,
         "wires": [
             [],
-            [
-                "f8e1b9eb.141508",
-                "da7f8653.de4cd8",
-                "cb1ba3b2.b5598"
-            ]
+            []
         ]
     },
     {
@@ -5181,7 +3309,19 @@
         "z": "1f8a59d.c5c0ca6",
         "name": "AtHome",
         "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "input_boolean.at_home",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -5198,6 +3338,7 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
+        "outputinitially": false,
         "x": 65,
         "y": 261.7329864501953,
         "wires": [
@@ -5208,49 +3349,24 @@
         ]
     },
     {
-        "id": "f8e1b9eb.141508",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Kamerlicht On",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.kamerlicht\" }",
-        "mergecontext": "",
-        "x": 816.9392166137695,
-        "y": 103.43937397003174,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "11d1f1ea.b3357e",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Kamerlicht Off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.kamerlicht\" }",
-        "mergecontext": "",
-        "x": 899.009464263916,
-        "y": 364.00562381744385,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b4fad9fa.a26448",
         "type": "api-call-service",
         "z": "b01a2cb9.9baef",
         "name": "Turn on Bed",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"input_boolean.vincent_in_bed\" }",
+        "entityId": "input_boolean.vincent_in_bed",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 977.0093994140625,
-        "y": 242.00569820404053,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 860,
         "wires": [
             []
         ]
@@ -5261,12 +3377,19 @@
         "z": "b01a2cb9.9baef",
         "name": "Turn off Bed",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"input_boolean.vincent_in_bed\" }",
+        "entityId": "input_boolean.vincent_in_bed",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 755.0094604492188,
-        "y": 360.00561332702637,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 754.0094604492188,
+        "y": 990.0056133270264,
         "wires": [
             []
         ]
@@ -5339,32 +3462,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 515.5093994140625,
-        "y": 264.9450340270996,
+        "x": 514.5093994140625,
+        "y": 894.9450340270996,
         "wires": [
             [
                 "e273f18e.9ccdc"
-            ]
-        ]
-    },
-    {
-        "id": "491267bf.e2e058",
-        "type": "link in",
-        "z": "922b9d9f.0323",
-        "name": "lights off",
-        "links": [
-            "597c90ec.6a3b"
-        ],
-        "x": 740.9336318969727,
-        "y": 425.08702278137207,
-        "wires": [
-            [
-                "11d1f1ea.b3357e",
-                "548c3056.0ed32",
-                "758c1a19.542604",
-                "5711af9d.3a505",
-                "de2fdbd9.63e618",
-                "8fe09ffa.ba538"
             ]
         ]
     },
@@ -5381,102 +3483,6 @@
         "wires": []
     },
     {
-        "id": "955e5f55.c88f6",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Keukenlicht On",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.keukenlicht\" }",
-        "mergecontext": "",
-        "x": 819.0094604492188,
-        "y": 150.0056915283203,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cb1ba3b2.b5598",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Buitenlicht On",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.buitenlicht\" }",
-        "mergecontext": "",
-        "x": 814.0094604492188,
-        "y": 186.0056915283203,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "da7f8653.de4cd8",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Barlicht On",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.barlicht\" }",
-        "mergecontext": "",
-        "x": 803.0094604492188,
-        "y": 228.0056915283203,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5711af9d.3a505",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Barlicht Off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.barlicht\" }",
-        "mergecontext": "",
-        "x": 895.0095252990723,
-        "y": 493.00562286376953,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "758c1a19.542604",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Buitenlicht Off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.buitenlicht\" }",
-        "mergecontext": "",
-        "x": 906.0095252990723,
-        "y": 451.00562286376953,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "548c3056.0ed32",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Keukenlicht Off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.keukenlicht\" }",
-        "mergecontext": "",
-        "x": 911.0095252990723,
-        "y": 415.00562286376953,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "5db30acb.613b44",
         "type": "subflow:8a844107.6e076",
         "z": "922b9d9f.0323",
@@ -5484,11 +3490,7 @@
         "x": 402.93749046325684,
         "y": 428.82946395874023,
         "wires": [
-            [
-                "f8e1b9eb.141508",
-                "cb1ba3b2.b5598",
-                "da7f8653.de4cd8"
-            ],
+            [],
             [
                 "597c90ec.6a3b"
             ]
@@ -5561,21 +3563,24 @@
         ]
     },
     {
-        "id": "e91723d4.abef7",
-        "type": "subflow:851545fd.080be8",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "",
-        "x": 1760.9352416992188,
-        "y": 188.77645111083984,
-        "wires": []
-    },
-    {
         "id": "7cf42969.ac41e8",
         "type": "trigger-state",
         "z": "1f8a59d.c5c0ca6",
         "name": "InBed",
         "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "input_boolean.vincent_in_bed",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -5592,6 +3597,7 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
+        "outputinitially": false,
         "x": 58.93559265136719,
         "y": 329.4979944229126,
         "wires": [
@@ -5600,16 +3606,6 @@
                 "e6c34e3f.78c75"
             ]
         ]
-    },
-    {
-        "id": "d5a7e541.e0ef98",
-        "type": "comment",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "Record Temperature NEST",
-        "info": "",
-        "x": 129.0094757080078,
-        "y": 470.005654335022,
-        "wires": []
     },
     {
         "id": "c9f12a1b.be5888",
@@ -5642,10 +3638,17 @@
         "z": "f8c3d2e.ff7853",
         "name": "Set Power",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_number",
         "service": "set_value",
-        "data": "{   \"entity_id\": \"input_number.power\" }",
+        "entityId": "input_number.power",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
         "x": 790.7840347290039,
         "y": 983.6447982788086,
         "wires": [
@@ -5754,10 +3757,11 @@
         "z": "405d007b.0887d",
         "name": "Block if not At home",
         "server": "a0b35919.2f8bf8",
+        "outputs": 1,
         "halt_if": "off",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.at_home",
+        "override_payload": true,
         "x": 318.79261779785156,
         "y": 270.1590805053711,
         "wires": [
@@ -5770,62 +3774,15 @@
         "z": "405d007b.0887d",
         "name": "Block if At home",
         "server": "a0b35919.2f8bf8",
+        "outputs": 1,
         "halt_if": "on",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.at_home",
+        "override_payload": true,
         "x": 303.0141830444336,
         "y": 333.0056982040405,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "27a5ebe1.345034",
-        "type": "change",
-        "z": "bfd62bd3.8ae858",
-        "name": "Push: set topic/payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "payload.data.message",
-                "pt": "msg",
-                "to": "data",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "payload.data.title",
-                "pt": "msg",
-                "to": "topic",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 296.01424407958984,
-        "y": 98.64208984375,
-        "wires": [
-            [
-                "824d42f8.16dc8"
-            ]
         ]
     },
     {
@@ -5942,10 +3899,10 @@
         "name": "",
         "server": "a0b35919.2f8bf8",
         "service_domain": "tts",
-        "service": "google_say",
-        "data": "{   \"entity_id\": \"media_player.googlehome_kantoor\" }",
+        "service": "google_translate_say",
+        "data": "",
         "mergecontext": "",
-        "x": 569.9317779541016,
+        "x": 599.9317779541016,
         "y": 108.78781986236572,
         "wires": [
             []
@@ -6081,47 +4038,6 @@
         "wires": []
     },
     {
-        "id": "3b434fbb.23aad",
-        "type": "api-call-service",
-        "z": "bfd62bd3.8ae858",
-        "name": "",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "notify",
-        "service": "ios_iphone",
-        "data": "",
-        "mergecontext": "",
-        "x": 739.0094375610352,
-        "y": 96.00569725036621,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1143561a.547e4a",
-        "type": "api-call-service",
-        "z": "bfd62bd3.8ae858",
-        "name": "",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "notify",
-        "service": "ios_vincent_ipad_pro",
-        "data": "",
-        "mergecontext": "",
-        "x": 765.0094604492188,
-        "y": 144.0056915283203,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bc790893.3aaa08",
-        "type": "subflow:bfd62bd3.8ae858",
-        "z": "851545fd.080be8",
-        "name": "",
-        "x": 261.0094909667969,
-        "y": 319.00567626953125,
-        "wires": []
-    },
-    {
         "id": "486faee7.13919",
         "type": "change",
         "z": "1f8a59d.c5c0ca6",
@@ -6151,28 +4067,9 @@
         "y": 192.6079158782959,
         "wires": [
             [
-                "e91723d4.abef7",
-                "524ab63b.a69858"
+                "5c97a454.65936c"
             ]
         ]
-    },
-    {
-        "id": "bc6eed99.05f4d",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "x": 703.1519775390625,
-        "y": 292.35406494140625,
-        "wires": []
-    },
-    {
-        "id": "524ab63b.a69858",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "1f8a59d.c5c0ca6",
-        "name": "",
-        "x": 1756.706398010254,
-        "y": 132.00567722320557,
-        "wires": []
     },
     {
         "id": "38f4a345.28b87c",
@@ -6253,21 +4150,13 @@
         ]
     },
     {
-        "id": "53b279cb.6c2e78",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 1077.0095863342285,
-        "y": 1180.3694114685059,
-        "wires": []
-    },
-    {
         "id": "6fb40943.716008",
         "type": "subflow:fd7dbe32.1f2d2",
         "z": "b01a2cb9.9baef",
         "name": "",
-        "x": 523.7840423583984,
-        "y": 154.90624237060547,
+        "env": [],
+        "x": 522.7840423583984,
+        "y": 784.9062423706055,
         "wires": []
     },
     {
@@ -6282,44 +4171,12 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 134.0142059326172,
-        "y": 985.5511474609375,
+        "x": 162.0142059326172,
+        "y": 266.55121421813965,
         "wires": [
             [
                 "a3b67c32.22b87"
             ]
-        ]
-    },
-    {
-        "id": "de2fdbd9.63e618",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "WC off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_wc\" }",
-        "mergecontext": "",
-        "x": 879.0142211914062,
-        "y": 531.0056762695312,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8fe09ffa.ba538",
-        "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Badkamer off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.aeotec_zw111_nano_dimmer_switch_badkamer\" }",
-        "mergecontext": "",
-        "x": 896.0141830444336,
-        "y": 569.0057027339935,
-        "wires": [
-            []
         ]
     },
     {
@@ -6367,128 +4224,6 @@
         "x": 829.0142211914062,
         "y": 1290.460205078125,
         "wires": []
-    },
-    {
-        "id": "1bcd8c8a.480543",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Set Vincent Away",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"input_boolean.vincent_home\" }",
-        "mergecontext": "",
-        "x": 732.0141716003418,
-        "y": 1348.0052509307861,
-        "wires": [
-            [
-                "ceb2efe8.91927"
-            ]
-        ]
-    },
-    {
-        "id": "ceb2efe8.91927",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Away",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OwnTracks update",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Away",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 905.7812461853027,
-        "y": 1347.5736103057861,
-        "wires": [
-            [
-                "53b279cb.6c2e78"
-            ]
-        ]
-    },
-    {
-        "id": "126c3591.16ef0a",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Home",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OwnTracks update",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Home",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 886.0142593383789,
-        "y": 1184.005615234375,
-        "wires": [
-            [
-                "53b279cb.6c2e78"
-            ]
-        ]
-    },
-    {
-        "id": "cc78b5ca.37beb8",
-        "type": "api-current-state",
-        "z": "b01a2cb9.9baef",
-        "name": "If Vincent at Home",
-        "server": "a0b35919.2f8bf8",
-        "halt_if": "off",
-        "override_topic": true,
-        "override_payload": true,
-        "entity_id": "input_boolean.vincent_home",
-        "x": 357.7926025390625,
-        "y": 1350.184639930725,
-        "wires": [
-            [
-                "8a83f5d6.5a7c98"
-            ]
-        ]
-    },
-    {
-        "id": "35deb46a.8acc1c",
-        "type": "api-current-state",
-        "z": "b01a2cb9.9baef",
-        "name": "If Vincent not at Home",
-        "server": "a0b35919.2f8bf8",
-        "halt_if": "on",
-        "override_topic": true,
-        "override_payload": true,
-        "entity_id": "input_boolean.vincent_home",
-        "x": 343.0142288208008,
-        "y": 1187.096565246582,
-        "wires": [
-            [
-                "e284e105.ef294"
-            ]
-        ]
     },
     {
         "id": "997a79fc.25f228",
@@ -6576,8 +4311,7 @@
         "y": 2404.933371782303,
         "wires": [
             [
-                "ac116c97.14332",
-                "a7c15e99.92076"
+                "ac116c97.14332"
             ]
         ]
     },
@@ -6611,19 +4345,9 @@
         "y": 2335.9999294281006,
         "wires": [
             [
-                "ac116c97.14332",
-                "a7c15e99.92076"
+                "ac116c97.14332"
             ]
         ]
-    },
-    {
-        "id": "a7c15e99.92076",
-        "type": "subflow:851545fd.080be8",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 558.9999923706055,
-        "y": 2407.0002222061157,
-        "wires": []
     },
     {
         "id": "8d18cccc.79947",
@@ -6641,7 +4365,19 @@
         "z": "c13cf3fe.71f31",
         "name": "Frontdoor",
         "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "binary_sensor.door_frontdoor_sensor",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -6658,6 +4394,7 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
+        "outputinitially": false,
         "x": 83.78121948242188,
         "y": 492.9601402282715,
         "wires": [
@@ -6672,122 +4409,32 @@
         ]
     },
     {
-        "id": "e284e105.ef294",
-        "type": "delay",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "60",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 543.9392356872559,
-        "y": 1185.596565246582,
-        "wires": [
-            [
-                "d142f591.832c28"
-            ]
-        ]
-    },
-    {
-        "id": "b9e4634d.5b601",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 364.93184661865234,
-        "y": 1228.4811344146729,
-        "wires": [
-            [
-                "e284e105.ef294"
-            ]
-        ]
-    },
-    {
-        "id": "633ac590.35050c",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360.0094909667969,
-        "y": 1281.1875,
-        "wires": [
-            [
-                "8a83f5d6.5a7c98"
-            ]
-        ]
-    },
-    {
-        "id": "8a83f5d6.5a7c98",
-        "type": "delay",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "60",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 544.0094299316406,
-        "y": 1349.187481880188,
-        "wires": [
-            [
-                "1bcd8c8a.480543"
-            ]
-        ]
-    },
-    {
         "id": "679693b1.7f6dfc",
         "type": "api-current-state",
         "z": "c13cf3fe.71f31",
         "name": "If house empty",
         "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "outputs": 2,
         "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.at_home",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
         "x": 286.0095329284668,
         "y": 535.0055980682373,
         "wires": [
             [
                 "cda65657.7320a8",
                 "afc54aa6.137408"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -6826,19 +4473,8 @@
         "x": 727.0094833374023,
         "y": 536.0056657791138,
         "wires": [
-            [
-                "d7e8e960.7b9668"
-            ]
+            []
         ]
-    },
-    {
-        "id": "d7e8e960.7b9668",
-        "type": "subflow:851545fd.080be8",
-        "z": "c13cf3fe.71f31",
-        "name": "",
-        "x": 914.009391784668,
-        "y": 535.0056438446045,
-        "wires": []
     },
     {
         "id": "c038a532.1c1418",
@@ -6846,7 +4482,19 @@
         "z": "c13cf3fe.71f31",
         "name": "Alarm",
         "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "input_boolean.alarm",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -6863,6 +4511,7 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
+        "outputinitially": false,
         "x": 132.00947952270508,
         "y": 67.00568008422852,
         "wires": [
@@ -6885,10 +4534,17 @@
         "z": "c13cf3fe.71f31",
         "name": "Alarm off",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"input_boolean.alarm\" }",
+        "entityId": "input_boolean.alarm",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
         "x": 609.9355392456055,
         "y": 22.56242561340332,
         "wires": [
@@ -6901,10 +4557,17 @@
         "z": "c13cf3fe.71f31",
         "name": "Alarm on",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"input_boolean.alarm\" }",
+        "entityId": "input_boolean.alarm",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
         "x": 947.0094604492188,
         "y": 447.0055961608887,
         "wires": [
@@ -6967,7 +4630,19 @@
         "z": "c13cf3fe.71f31",
         "name": "Terrasdeur",
         "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "binary_sensor.door_terrasdeur_sensor",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -6984,6 +4659,7 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
+        "outputinitially": false,
         "x": 97.00947570800781,
         "y": 591.0056467056274,
         "wires": [
@@ -7083,8 +4759,7 @@
         "y": 2555.65420460701,
         "wires": [
             [
-                "7cbf52e1.ede00c",
-                "756f6cc3.6325f4"
+                "7cbf52e1.ede00c"
             ]
         ]
     },
@@ -7118,19 +4793,9 @@
         "y": 2486.7207622528076,
         "wires": [
             [
-                "7cbf52e1.ede00c",
-                "756f6cc3.6325f4"
+                "7cbf52e1.ede00c"
             ]
         ]
-    },
-    {
-        "id": "756f6cc3.6325f4",
-        "type": "subflow:851545fd.080be8",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 563.1808700561523,
-        "y": 2557.7210550308228,
-        "wires": []
     },
     {
         "id": "eaa26b03.351628",
@@ -7218,8 +4883,7 @@
         "y": 2706.29043507576,
         "wires": [
             [
-                "6d93f093.2756c",
-                "3d9fb4bb.ee39ac"
+                "6d93f093.2756c"
             ]
         ]
     },
@@ -7253,19 +4917,9 @@
         "y": 2637.3569927215576,
         "wires": [
             [
-                "6d93f093.2756c",
-                "3d9fb4bb.ee39ac"
+                "6d93f093.2756c"
             ]
         ]
-    },
-    {
-        "id": "3d9fb4bb.ee39ac",
-        "type": "subflow:851545fd.080be8",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 567.1808700561523,
-        "y": 2708.3572854995728,
-        "wires": []
     },
     {
         "id": "499c45ba.34099c",
@@ -7396,22 +5050,6 @@
         "wires": []
     },
     {
-        "id": "6125c8f5.3ad488",
-        "type": "api-call-service",
-        "z": "851545fd.080be8",
-        "name": "Notify",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "notify",
-        "service": "ios_vincent_ipad_pro",
-        "data": "",
-        "mergecontext": "",
-        "x": 772.0142211914062,
-        "y": 285.00567626953125,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "24c196fe.8ef9aa",
         "type": "trigger-state",
         "z": "b01a2cb9.9baef",
@@ -7523,9 +5161,27 @@
         "z": "1f8a59d.c5c0ca6",
         "name": "Shutdown Bedmode (also called on Full)",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "input_boolean.momentary_shutdown_bedmode_action",
         "entityidfiltertype": "substring",
+        "outputinitially": false,
+        "state_type": "str",
         "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
         "x": 165,
         "y": 214.00567626953125,
         "wires": [
@@ -7540,10 +5196,11 @@
         "z": "b01a2cb9.9baef",
         "name": "Block If Guests",
         "server": "a0b35919.2f8bf8",
+        "outputs": 1,
         "halt_if": "on",
         "override_topic": true,
-        "override_payload": true,
         "entity_id": "input_boolean.guests_home",
+        "override_payload": true,
         "x": 271.0000457763672,
         "y": 3110.095697402954,
         "wires": [
@@ -7553,102 +5210,32 @@
         ]
     },
     {
-        "id": "28945021.e8465",
-        "type": "server-state-changed",
-        "z": "375d1e4f.6a9d22",
-        "name": "Shutdown Bedmode",
-        "server": "a0b35919.2f8bf8",
-        "entityidfilter": "input_boolean.momentary_shutdown_bedmode_action",
-        "entityidfiltertype": "substring",
-        "haltifstate": "",
-        "x": 95,
-        "y": 71.00567245483398,
-        "wires": [
-            [
-                "8d4e2b4.f477ad8"
-            ]
-        ]
-    },
-    {
-        "id": "8a48d1c0.7784b",
-        "type": "server-state-changed",
-        "z": "375d1e4f.6a9d22",
-        "name": "Shutdown Non-Bedmode",
-        "server": "a0b35919.2f8bf8",
-        "entityidfilter": "input_boolean.momentary_shutdown_nonbedmode_action",
-        "entityidfiltertype": "substring",
-        "haltifstate": "",
-        "x": 115,
-        "y": 523.2907183170319,
-        "wires": [
-            [
-                "fe25b661.172a48"
-            ]
-        ]
-    },
-    {
-        "id": "8d4e2b4.f477ad8",
-        "type": "change",
-        "z": "375d1e4f.6a9d22",
-        "name": "Off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 292.78977966308594,
-        "y": 69.67040824890137,
-        "wires": [
-            [
-                "a4f4134a.4c4c8"
-            ]
-        ]
-    },
-    {
-        "id": "fe25b661.172a48",
-        "type": "change",
-        "z": "375d1e4f.6a9d22",
-        "name": "Off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 269.0142250061035,
-        "y": 583.0056562423706,
-        "wires": [
-            [
-                "41ecc9af.4ef048"
-            ]
-        ]
-    },
-    {
         "id": "c0a30ff5.2dfce",
         "type": "server-state-changed",
         "z": "922b9d9f.0323",
         "name": "Shutdown Bedmode",
         "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "input_boolean.momentary_shutdown_bedmode_action",
         "entityidfiltertype": "substring",
+        "outputinitially": false,
+        "state_type": "str",
         "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
         "x": 197.01419830322266,
         "y": 504.00566482543945,
         "wires": [
@@ -7700,21 +5287,11 @@
         "y": 1476.3692626953125,
         "wires": [
             [
-                "e5be3426.1368e8",
                 "4b73e80d.f8e3d8",
                 "6a5cde6b.7103"
             ],
             []
         ]
-    },
-    {
-        "id": "e5be3426.1368e8",
-        "type": "subflow:851545fd.080be8",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "x": 302.01422119140625,
-        "y": 1476.3692626953125,
-        "wires": []
     },
     {
         "id": "78bc6579.50d9ac",
@@ -7732,20 +5309,10 @@
         "y": 1590.3692407608032,
         "wires": [
             [
-                "278d3b75.f6bc24",
                 "4b73e80d.f8e3d8"
             ],
             []
         ]
-    },
-    {
-        "id": "278d3b75.f6bc24",
-        "type": "subflow:851545fd.080be8",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "x": 307.01422119140625,
-        "y": 1544.3692626953125,
-        "wires": []
     },
     {
         "id": "6a5cde6b.7103",
@@ -7774,218 +5341,6 @@
         "x": 87.01420974731445,
         "y": 1379.46005320549,
         "wires": []
-    },
-    {
-        "id": "1aa6a9e8.b0d866",
-        "type": "api-call-service",
-        "z": "375d1e4f.6a9d22",
-        "name": "NAS on",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.nas\" }",
-        "mergecontext": "",
-        "x": 749.9354934692383,
-        "y": 386.4658269882202,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7c6c9d38.16fbf4",
-        "type": "api-call-service",
-        "z": "375d1e4f.6a9d22",
-        "name": "PC on",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.pc\" }",
-        "mergecontext": "",
-        "x": 769.0094718933105,
-        "y": 122.00566291809082,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2f8e8038.8f7e8",
-        "type": "api-call-service",
-        "z": "375d1e4f.6a9d22",
-        "name": "PC off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.pc\" }",
-        "mergecontext": "",
-        "x": 1061.0095901489258,
-        "y": 192.00567197799683,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ad2bdf7e.04602",
-        "type": "api-call-service",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"light.kantoor\",   \"rgb_color\": [100,255,100],   \"brightness_pct\":50 }",
-        "mergecontext": "",
-        "x": 381.7869110107422,
-        "y": 461.57386016845703,
-        "wires": [
-            [
-                "fb98dea0.9006f"
-            ]
-        ]
-    },
-    {
-        "id": "e1362e85.cb05",
-        "type": "api-call-service",
-        "z": "f4f34383.c51b7",
-        "name": "Neutral white",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"light.kantoor\",   \"rgb_color\": [255,255,255],   \"brightness_pct\":25 }",
-        "mergecontext": "",
-        "x": 360.01422119140625,
-        "y": 393.00567626953125,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6e7bc3cb.04dd5c",
-        "type": "inject",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 124.01420593261719,
-        "y": 387.00567626953125,
-        "wires": [
-            [
-                "e1362e85.cb05"
-            ]
-        ]
-    },
-    {
-        "id": "88567908.b67ef8",
-        "type": "change",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 541.7840995788574,
-        "y": 537.4913902282715,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fb98dea0.9006f",
-        "type": "debug",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 563.7812232971191,
-        "y": 461.7527894973755,
-        "wires": []
-    },
-    {
-        "id": "3b9554d0.6e560c",
-        "type": "change",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "brightness",
-                "pt": "msg",
-                "to": "100",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 321.79261779785156,
-        "y": 536.9431838989258,
-        "wires": [
-            [
-                "88567908.b67ef8"
-            ]
-        ]
-    },
-    {
-        "id": "a4c69374.a93d6",
-        "type": "inject",
-        "z": "f4f34383.c51b7",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 120.01420593261719,
-        "y": 537.0056762695312,
-        "wires": [
-            [
-                "3b9554d0.6e560c"
-            ]
-        ]
-    },
-    {
-        "id": "47eea249.7d0f4c",
-        "type": "server-state-changed",
-        "z": "3aed527a.e169fe",
-        "name": "",
-        "server": "a0b35919.2f8bf8",
-        "entityidfilter": "weather.dark_sky",
-        "entityidfiltertype": "substring",
-        "haltifstate": "",
-        "x": 169.79261779785156,
-        "y": 497.9744338989258,
-        "wires": [
-            [
-                "6b731e8b.83811"
-            ]
-        ]
     },
     {
         "id": "e9d1690a.e19ff8",
@@ -8037,7 +5392,7 @@
         "z": "aa9f90ed.25077",
         "name": "Wasruimte sensor",
         "server": "a0b35919.2f8bf8",
-        "entityid": "binary_sensor.door_sensor_wasruimte",
+        "entityid": "binary_sensor.door_wasruimte",
         "debugenabled": false,
         "constraints": [
             {
@@ -8058,27 +5413,11 @@
         "y": 321.55115699768066,
         "wires": [
             [
-                "5ca5d682.e95c8"
+                "69142c4b.59d9d4"
             ],
             [
-                "5ca5d682.e95c8"
+                "d8a8f87a.1a9888"
             ]
-        ]
-    },
-    {
-        "id": "7b582a51.8e9e74",
-        "type": "api-call-service",
-        "z": "375d1e4f.6a9d22",
-        "name": "NAS off",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.nas\" }",
-        "mergecontext": "",
-        "x": 750.0094318389893,
-        "y": 438.0056438446045,
-        "wires": [
-            []
         ]
     },
     {
@@ -8096,48 +5435,13 @@
         "wires": []
     },
     {
-        "id": "72808553.2f480c",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "aa9f90ed.25077",
-        "name": "",
-        "x": 536.2287693023682,
-        "y": 320.48276710510254,
-        "wires": []
-    },
-    {
-        "id": "5ca5d682.e95c8",
-        "type": "change",
-        "z": "aa9f90ed.25077",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Wasruimte",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 347.01902770996094,
-        "y": 319.03228759765625,
-        "wires": [
-            [
-                "72808553.2f480c"
-            ]
-        ]
-    },
-    {
         "id": "2dcc3fb2.c3e27",
         "type": "trigger-state",
         "z": "922b9d9f.0323",
         "name": "Movement Keuken",
         "server": "a0b35919.2f8bf8",
-        "entityid": "binary_sensor.pir_sensor_keuken",
+        "entityid": "binary_sensor.zwave_movement_keuken",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -8158,7 +5462,8 @@
         "y": 729,
         "wires": [
             [
-                "cbc3c590.d1de18"
+                "cbc3c590.d1de18",
+                "c12e0d33.91dee"
             ],
             []
         ]
@@ -8169,12 +5474,19 @@
         "z": "922b9d9f.0323",
         "name": "Barlicht on",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_on",
-        "data": "{   \"entity_id\": \"switch.barlicht\" }",
+        "entityId": "switch.zwave_bar",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 558.1666793823242,
-        "y": 730.0003852844238,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 750,
+        "y": 660,
         "wires": [
             []
         ]
@@ -8185,12 +5497,19 @@
         "z": "922b9d9f.0323",
         "name": "Barlicht off",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "data": "{   \"entity_id\": \"switch.barlicht\" }",
+        "entityId": "switch.zwave_bar",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 758.0001373291016,
-        "y": 779.0000619888306,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 750,
+        "y": 760,
         "wires": [
             []
         ]
@@ -8223,17 +5542,26 @@
         "z": "922b9d9f.0323",
         "name": "If barlicht off",
         "server": "a0b35919.2f8bf8",
-        "halt_if": "on",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
         "override_topic": true,
-        "override_payload": true,
-        "entity_id": "switch.barlicht",
-        "x": 357.1666946411133,
-        "y": 728.0000629425049,
+        "entity_id": "light.bar",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 370,
+        "y": 720,
         "wires": [
             [
-                "725376da.5755b8",
-                "6f69cf67.550bc"
-            ]
+                "8b9219cc.bb1308"
+            ],
+            []
         ]
     },
     {
@@ -8327,28 +5655,79 @@
         "wires": []
     },
     {
-        "id": "d2ab1840.0b4938",
+        "id": "50b8071.a35e8f8",
+        "type": "comment",
+        "z": "b01a2cb9.9baef",
+        "name": "Manage Vincent",
+        "info": "",
+        "x": 120,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "75715936.ccdc98",
+        "type": "trigger",
+        "z": "aa9f90ed.25077",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "8",
+        "extend": true,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 390,
+        "y": 680,
+        "wires": [
+            [
+                "7e2b9eb8.88372"
+            ]
+        ]
+    },
+    {
+        "id": "bc784c2d.41133",
         "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Keuken Berging off",
+        "z": "aa9f90ed.25077",
+        "name": "Bed Led",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
-        "service": "turn_off",
-        "data": "{   \"entity_id\": \"light.keukenberging\" }",
+        "service": "turn_on",
+        "entityId": "light.bed_ledstrip",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 436.0000114440918,
-        "y": 1003,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 400,
+        "y": 740,
         "wires": [
             []
         ]
     },
     {
-        "id": "257a9ea5.fe6652",
+        "id": "6cba774b.f95378",
         "type": "trigger-state",
-        "z": "922b9d9f.0323",
-        "name": "Berging Keuken",
+        "z": "aa9f90ed.25077",
+        "name": "Slaapkamer movement",
         "server": "a0b35919.2f8bf8",
-        "entityid": "binary_sensor.door_bergingkeuken_sensor",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "binary_sensor.zwave_movement_slaapkamer",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
@@ -8365,143 +5744,317 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
-        "x": 134.78974533081055,
-        "y": 925.5823936462402,
+        "outputinitially": false,
+        "x": 144.0142059326172,
+        "y": 735.0056705474854,
         "wires": [
             [
-                "e288ba2a.d005e8",
-                "e3703808.9292a8"
+                "bc784c2d.41133",
+                "75715936.ccdc98"
             ],
-            [
-                "d2ab1840.0b4938",
-                "e3703808.9292a8"
-            ]
+            []
         ]
     },
     {
-        "id": "e288ba2a.d005e8",
+        "id": "5d2d9ab.1b42864",
+        "type": "comment",
+        "z": "aa9f90ed.25077",
+        "name": "Slaapkamer",
+        "info": "",
+        "x": 69.93181228637695,
+        "y": 618.3749985694885,
+        "wires": []
+    },
+    {
+        "id": "a605a0b8.f86cf",
         "type": "api-call-service",
-        "z": "922b9d9f.0323",
-        "name": "Keuken Berging On",
+        "z": "aa9f90ed.25077",
+        "name": "Keuken Berging off",
         "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
-        "service": "turn_on",
-        "data": "{   \"entity_id\": \"light.keukenberging\",    \"color_name\":\"white\",    \"brightness\": 255 }",
+        "service": "turn_off",
+        "entityId": "light.berging",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 436.0142593383789,
-        "y": 886.005765914917,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 430,
+        "y": 1000,
         "wires": [
             []
         ]
     },
     {
-        "id": "964b34a3.dc9c98",
+        "id": "e2bdce9b.8e7c1",
+        "type": "trigger-state",
+        "z": "aa9f90ed.25077",
+        "name": "Berging Keuken",
+        "server": "a0b35919.2f8bf8",
+        "entityid": "binary_sensor.door_berging",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "id": "4ty3zy8fo1b",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "propertyValue": "new_state.state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on"
+            }
+        ],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "x": 128.78973388671875,
+        "y": 922.5823936462402,
+        "wires": [
+            [
+                "be91c1f4.9489a"
+            ],
+            [
+                "a605a0b8.f86cf"
+            ]
+        ]
+    },
+    {
+        "id": "be91c1f4.9489a",
+        "type": "api-call-service",
+        "z": "aa9f90ed.25077",
+        "name": "Keuken Berging On",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.berging",
+        "data": "{\"color_name\":\"white\",\"brightness\":255}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 430.0142478942871,
+        "y": 883.005765914917,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ad89d8e.4ea11",
         "type": "comment",
-        "z": "922b9d9f.0323",
+        "z": "aa9f90ed.25077",
         "name": "Berging",
         "info": "",
-        "x": 74,
-        "y": 879.0001058578491,
+        "x": 67.9999885559082,
+        "y": 876.0001058578491,
         "wires": []
     },
     {
-        "id": "78c31340.7d3d3c",
-        "type": "inject",
-        "z": "f4f34383.c51b7",
+        "id": "d8a8f87a.1a9888",
+        "type": "api-call-service",
+        "z": "aa9f90ed.25077",
+        "name": "Wasruimte off",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.wasruimte",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 460,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69142c4b.59d9d4",
+        "type": "api-call-service",
+        "z": "aa9f90ed.25077",
+        "name": "Wasruimte On",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.wasruimte",
+        "data": "{\"color_name\":\"white\",\"brightness\":255}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 460.0142478942871,
+        "y": 243.005765914917,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5ebe00a.520d",
+        "type": "server-events",
+        "z": "88d7a865.0b5458",
         "name": "",
-        "topic": "",
-        "payload": "500",
-        "payloadType": "num",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 78,
-        "y": 119,
+        "server": "a0b35919.2f8bf8",
+        "event_type": "deconz_event",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "x": 220,
+        "y": 100,
         "wires": [
             [
-                "2317fed8.be2a22"
+                "bec0fbad.58c908"
             ]
         ]
     },
     {
-        "id": "79606aa.cbe0094",
-        "type": "csv",
-        "z": "f4f34383.c51b7",
-        "name": "Tabel",
-        "sep": ",",
-        "hdrin": true,
-        "hdrout": "",
-        "multi": "mult",
-        "ret": "\\n",
-        "temp": "Power,R,G,B,Brightness",
-        "skip": "0",
-        "x": 544.5,
-        "y": 118,
+        "id": "560e6494.e79efc",
+        "type": "comment",
+        "z": "88d7a865.0b5458",
+        "name": "",
+        "info": "",
+        "x": 80,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "66073bd4.b81bb4",
+        "type": "switch",
+        "z": "88d7a865.0b5458",
+        "name": "type selector",
+        "property": "type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wake",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "shake",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "drop",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "rotate",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "push",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "double tap",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [],
+            [
+                "bdf44ef4.eb8e1",
+                "39be1760.08d9c8"
+            ],
+            [
+                "bdf44ef4.eb8e1"
+            ],
+            [
+                "72d143f7.0e6a8c",
+                "7b61a9fa.082cd8"
+            ],
+            [
+                "67fb9bbc.992c74",
+                "7b61a9fa.082cd8"
+            ],
+            [
+                "67fb9bbc.992c74",
+                "7b61a9fa.082cd8"
+            ]
+        ],
+        "outputLabels": [
+            "Wake",
+            "Shake",
+            "Drop",
+            "Rotate",
+            "Push",
+            "Tap"
+        ]
+    },
+    {
+        "id": "d6ffe7e3.92b468",
+        "type": "function",
+        "z": "88d7a865.0b5458",
+        "name": "",
+        "func": "var v = msg.payload;\nmsg.payload = v;\nmsg.from = v % 10;\nmsg.to = Math.floor(v / 1000);\nswitch (v){\n    case 7000:\n        msg.type = \"wake\";\n        break;\n    case 7007:\n        msg.type = \"shake\";\n        break;\n    case 7008:\n        msg.type = \"drop\";        \n        break;\n    default:\n        switch(msg.from){\n            case 0:\n                msg.type = \"push\";\n                break;\n            default:\n                if(msg.from == msg. to){\n                    msg.type = \"double tap\";\n                }else{\n                    msg.type = \"rotate\";\n                }\n        }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 280,
         "wires": [
             [
-                "88c0e6ab.1749a8"
+                "66073bd4.b81bb4",
+                "3991368.dcdffca"
             ]
         ]
     },
     {
-        "id": "7b62a5d3.4971dc",
+        "id": "3991368.dcdffca",
         "type": "debug",
-        "z": "f4f34383.c51b7",
+        "z": "88d7a865.0b5458",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 800,
-        "y": 44,
+        "targetType": "full",
+        "x": 450,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "6a5f2f81.2c167",
-        "type": "file in",
-        "z": "f4f34383.c51b7",
-        "name": "LoadFile",
-        "filename": "c:\\Rgbkleurenrange.csv",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": true,
-        "x": 392.5,
-        "y": 122,
-        "wires": [
-            [
-                "79606aa.cbe0094"
-            ]
-        ]
-    },
-    {
-        "id": "88c0e6ab.1749a8",
-        "type": "function",
-        "z": "f4f34383.c51b7",
-        "name": "Select based on payload value",
-        "func": "msg.payload.forEach(function(row) {\n    // node.warn(row);\n    // node.warn(row.Power);\n    // node.warn(msg.data)\n    if(msg.data>row.Power){\n        // node.warn(\"ddd\");\n        msg.payload = row;\n    }\n});\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 762,
-        "y": 118,
-        "wires": [
-            [
-                "7b62a5d3.4971dc"
-            ]
-        ]
-    },
-    {
-        "id": "2317fed8.be2a22",
+        "id": "bec0fbad.58c908",
         "type": "change",
-        "z": "f4f34383.c51b7",
+        "z": "88d7a865.0b5458",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "data",
+                "p": "payload",
                 "pt": "msg",
-                "to": "payload",
+                "to": "payload.event.event",
                 "tot": "msg"
             }
         ],
@@ -8510,32 +6063,1735 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 231,
-        "y": 123,
+        "x": 280,
+        "y": 180,
         "wires": [
             [
-                "6a5f2f81.2c167"
+                "d6ffe7e3.92b468"
             ]
         ]
     },
     {
-        "id": "e3703808.9292a8",
+        "id": "bdf44ef4.eb8e1",
+        "type": "template",
+        "z": "88d7a865.0b5458",
+        "name": "1 variable tts",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{type}}",
+        "output": "str",
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "5c36b9be.977998"
+            ]
+        ]
+    },
+    {
+        "id": "5c36b9be.977998",
+        "type": "subflow:e247e4d8.86ae58",
+        "z": "88d7a865.0b5458",
+        "name": "",
+        "env": [],
+        "x": 1070,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "67fb9bbc.992c74",
+        "type": "template",
+        "z": "88d7a865.0b5458",
+        "name": "2 variable tts",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{type}} {{to}}",
+        "output": "str",
+        "x": 870,
+        "y": 220,
+        "wires": [
+            [
+                "5c36b9be.977998"
+            ]
+        ]
+    },
+    {
+        "id": "72d143f7.0e6a8c",
+        "type": "template",
+        "z": "88d7a865.0b5458",
+        "name": "3 variable tts",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{type}} {{from}} to {{to}}",
+        "output": "str",
+        "x": 870,
+        "y": 260,
+        "wires": [
+            [
+                "5c36b9be.977998"
+            ]
+        ]
+    },
+    {
+        "id": "7b61a9fa.082cd8",
+        "type": "switch",
+        "z": "88d7a865.0b5458",
+        "name": "",
+        "property": "to",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "ca18bb6e.8ccda8"
+            ],
+            [],
+            [],
+            [],
+            [
+                "bfcd362b.39b288"
+            ],
+            []
+        ],
+        "outputLabels": [
+            "double red",
+            "yellow",
+            "blue",
+            "green",
+            "red",
+            "double green"
+        ]
+    },
+    {
+        "id": "ca18bb6e.8ccda8",
+        "type": "switch",
+        "z": "88d7a865.0b5458",
+        "name": "type selector",
+        "property": "type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "rotate",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "double tap",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "push",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 770,
+        "y": 380,
+        "wires": [
+            [
+                "f88d8d8.21f247"
+            ],
+            [
+                "f88d8d8.21f247"
+            ],
+            [
+                "e54ee1c0.fd89f"
+            ]
+        ],
+        "outputLabels": [
+            "Rotate",
+            "Tap",
+            "Push"
+        ]
+    },
+    {
+        "id": "f88d8d8.21f247",
+        "type": "api-call-service",
+        "z": "88d7a865.0b5458",
+        "name": "Keuken On",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e54ee1c0.fd89f",
+        "type": "api-call-service",
+        "z": "88d7a865.0b5458",
+        "name": "Keuken On",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfcd362b.39b288",
+        "type": "switch",
+        "z": "88d7a865.0b5458",
+        "name": "type selector",
+        "property": "type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "rotate",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "double tap",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "push",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 770,
+        "y": 460,
+        "wires": [
+            [
+                "94dddb2.0f96c28"
+            ],
+            [
+                "94dddb2.0f96c28"
+            ],
+            [
+                "e72130a3.5bdfc"
+            ]
+        ],
+        "outputLabels": [
+            "Rotate",
+            "Tap",
+            "Push"
+        ]
+    },
+    {
+        "id": "94dddb2.0f96c28",
+        "type": "api-call-service",
+        "z": "88d7a865.0b5458",
+        "name": "Bar On",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 960,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e72130a3.5bdfc",
+        "type": "api-call-service",
+        "z": "88d7a865.0b5458",
+        "name": "Keuken On",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e2b9eb8.88372",
+        "type": "api-call-service",
+        "z": "aa9f90ed.25077",
+        "name": "bed led off",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.bed_ledstrip",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 570,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9224c6c.1c36a38",
         "type": "debug",
-        "z": "922b9d9f.0323",
+        "z": "b01a2cb9.9baef",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 306.166690826416,
-        "y": 824.0000238418579,
+        "complete": "true",
+        "targetType": "full",
+        "x": 340,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "4de2fa66.98f9d4",
+        "id": "39be1760.08d9c8",
+        "type": "api-call-service",
+        "z": "88d7a865.0b5458",
+        "name": "Shutdown except bedroom",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_off",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 920,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcde538d.d098a",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.target_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "919fed72.c12e7"
+            ]
+        ]
+    },
+    {
+        "id": "38d26b7.a551a94",
+        "type": "switch",
+        "z": "f8c3d2e.ff7853",
+        "name": "Filter null",
+        "property": "value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 980,
+        "y": 280,
+        "wires": [
+            [],
+            [
+                "17991179.5dce5f"
+            ]
+        ]
+    },
+    {
+        "id": "919fed72.c12e7",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Target temp - Anna",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "target",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "anna",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "thermostaat",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "data.new_state.state",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "38d26b7.a551a94",
+                "8c98bbfc.f460f8"
+            ]
+        ]
+    },
+    {
+        "id": "88c8618e.06b3a",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.office_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "fcbbb821.289788"
+            ]
+        ]
+    },
+    {
+        "id": "fcbbb821.289788",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Office temp - Anna",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "office",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "anna",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "thermostaat",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 380,
+        "wires": [
+            [
+                "38d26b7.a551a94"
+            ]
+        ]
+    },
+    {
+        "id": "1f93cd33.0610d3",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Terras - Anna",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "terras",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "anna",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "thermostaat",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "38d26b7.a551a94"
+            ]
+        ]
+    },
+    {
+        "id": "44c1279f.bee6e8",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.outside_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 190,
+        "y": 440,
+        "wires": [
+            [
+                "1f93cd33.0610d3"
+            ]
+        ]
+    },
+    {
+        "id": "f04a4e3a.ad0ec",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_indoor_co2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "f3b67a92.acb3c8"
+            ]
+        ]
+    },
+    {
+        "id": "75fb7490.24649c",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_indoor_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "7b8f11ab.b8a3d"
+            ]
+        ]
+    },
+    {
+        "id": "1e0b9829.947ca8",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_indoor_humidity",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "cd54c06.6a6a14"
+            ]
+        ]
+    },
+    {
+        "id": "86af1e94.5a211",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_indoor_pressure",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 220,
+        "y": 260,
+        "wires": [
+            [
+                "6a19663c.d8f6b8"
+            ]
+        ]
+    },
+    {
+        "id": "de074127.0fb76",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Set Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "terras",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "basestation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "netatmo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "38d26b7.a551a94"
+            ]
+        ]
+    },
+    {
+        "id": "3dd9856e.a205fa",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Set Humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "terras",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "basestation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "humidity",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "netatmo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "38d26b7.a551a94"
+            ]
+        ]
+    },
+    {
+        "id": "45353c9a.f16964",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_terras_humidity",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 203,
+        "y": 568,
+        "wires": [
+            [
+                "3dd9856e.a205fa"
+            ]
+        ]
+    },
+    {
+        "id": "ebe7a736.5ebb18",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_terras_temperature",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 213,
+        "y": 508,
+        "wires": [
+            [
+                "de074127.0fb76"
+            ]
+        ]
+    },
+    {
+        "id": "f67baaa7.ca54d8",
+        "type": "change",
+        "z": "bfd62bd3.8ae858",
+        "name": "Add choice",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data.data.push.category",
+                "pt": "msg",
+                "to": "action",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.service",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.domain",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "a1bc5219.8dd28",
+                "1017f1d6.e7578e"
+            ]
+        ]
+    },
+    {
+        "id": "5b506956.f72cd8",
+        "type": "change",
+        "z": "bfd62bd3.8ae858",
+        "name": "Push: set topic/payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.message",
+                "pt": "msg",
+                "to": "data",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.title",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 312.9327278137207,
+        "y": 263.2613182067871,
+        "wires": [
+            [
+                "f67baaa7.ca54d8"
+            ]
+        ]
+    },
+    {
+        "id": "a1bc5219.8dd28",
+        "type": "api-call-service",
+        "z": "bfd62bd3.8ae858",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_iphone_vincent",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 805.927921295166,
+        "y": 260.6249256134033,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1017f1d6.e7578e",
+        "type": "api-call-service",
+        "z": "bfd62bd3.8ae858",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_vincent_ipad_pro",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 811.9279441833496,
+        "y": 308.6249198913574,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5123ce4c.6bf8c",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.netatmo_indoor_noise",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 190,
+        "y": 720,
+        "wires": [
+            [
+                "a829e911.8249e8"
+            ]
+        ]
+    },
+    {
+        "id": "5a57c15.62b224",
+        "type": "function",
+        "z": "bfd62bd3.8ae858",
+        "name": "",
+        "func": "var message = env.get(\"message\");\nvar topic = env.get(\"topic\");\nvar action = env.get(\"action\");\n\nif(message === null || message === \"\") {\n    \n}else{\n    msg.payload = message\n}\n\nif(topic === null || topic === \"\") {\n    \n}else{\n    msg.topic = topic\n}\n\nif(action === null || action === \"\") {\n    \n}else{\n    msg.action = action\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "5b506956.f72cd8"
+            ]
+        ]
+    },
+    {
+        "id": "ffd962ca.f152b",
+        "type": "change",
+        "z": "f4f34383.c51b7",
+        "name": "Add choice",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.data.data.push.category",
+                "pt": "msg",
+                "to": "action",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.service",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.domain",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 540,
+        "wires": [
+            [
+                "f3c57335.e8dc3",
+                "35b38cd.d4be474"
+            ]
+        ]
+    },
+    {
+        "id": "96f2759f.ad6f98",
+        "type": "change",
+        "z": "f4f34383.c51b7",
+        "name": "Push: set topic/payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.message",
+                "pt": "msg",
+                "to": "data",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.data.title",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 392.9327278137207,
+        "y": 543.2613182067871,
+        "wires": [
+            [
+                "ffd962ca.f152b"
+            ]
+        ]
+    },
+    {
+        "id": "f3c57335.e8dc3",
+        "type": "api-call-service",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_iphone_vincent",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 885.927921295166,
+        "y": 540.6249256134033,
+        "wires": [
+            [
+                "fe067caa.9e784"
+            ]
+        ]
+    },
+    {
+        "id": "35b38cd.d4be474",
+        "type": "api-call-service",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_vincent_ipad_pro",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 891.9279441833496,
+        "y": 588.6249198913574,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76f4650d.5db90c",
         "type": "inject",
-        "z": "922b9d9f.0323",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "topic": "topicb",
+        "payload": "Testa",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "96f2759f.ad6f98"
+            ]
+        ]
+    },
+    {
+        "id": "fe067caa.9e784",
+        "type": "debug",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1170,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a7bcaa7.13cdb58",
+        "type": "api-call-service",
+        "z": "f4f34383.c51b7",
+        "name": "Notify",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_iphone_vincent",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a59920e.91f2",
+        "type": "template",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "field": "payload.data",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"message\":\"{{data}}\"}",
+        "output": "json",
+        "x": 738.9998321533203,
+        "y": 230.3333330154419,
+        "wires": [
+            [
+                "a7bcaa7.13cdb58",
+                "9f2d5ae4.788c18"
+            ]
+        ]
+    },
+    {
+        "id": "8ff34440.12b5f8",
+        "type": "change",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.topic & \":\" & msg.payload",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.domain",
+                "pt": "msg",
+                "to": "notify",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.service",
+                "pt": "msg",
+                "to": "ios_iphone",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 545.9998321533203,
+        "y": 232.33333683013916,
+        "wires": [
+            [
+                "9a59920e.91f2"
+            ]
+        ]
+    },
+    {
+        "id": "62d5b4ef.9bfa9c",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "sdfasd",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "dsfasd",
+                "type": "str"
+            },
+            {
+                "name": "action",
+                "value": "alarm",
+                "type": "str"
+            }
+        ],
+        "x": 400,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9f2d5ae4.788c18",
+        "type": "api-call-service",
+        "z": "f4f34383.c51b7",
+        "name": "Notify",
+        "server": "a0b35919.2f8bf8",
+        "version": "1",
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "ios_vincent_ipad_pro",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 897.0140533447266,
+        "y": 269.0056858062744,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e198d4d.5fbb94",
+        "type": "inject",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "topic": "topicb",
+        "payload": "Testa",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "62d5b4ef.9bfa9c"
+            ]
+        ]
+    },
+    {
+        "id": "2b6d738.ecd728c",
+        "type": "debug",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5c97a454.65936c",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "1f8a59d.c5c0ca6",
+        "name": "",
+        "env": [],
+        "x": 1730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "45798529.94f81c",
+        "type": "trigger-state",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "device_tracker.c04ff54d_ddbe_484a_8d54_dc506f3e3a35",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "613b4fbe.95452",
+                "e397baaa.14c508"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "613b4fbe.95452",
+        "type": "switch",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "property": "data.event.new_state.attributes.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "mrp_development",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "wfc",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "amsterdam",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 740,
+        "y": 600,
+        "wires": [
+            [
+                "b7655b64.498828"
+            ],
+            [
+                "b7655b64.498828"
+            ],
+            [
+                "b7655b64.498828"
+            ],
+            [
+                "ea50ab90.4f9c18"
+            ]
+        ]
+    },
+    {
+        "id": "1e80c95e.4537b7",
+        "type": "api-call-service",
+        "z": "b01a2cb9.9baef",
+        "name": "Car Off",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.in_car",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1160,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec50b3b8.2bed8",
+        "type": "inject",
+        "z": "b01a2cb9.9baef",
         "name": "",
         "topic": "",
         "payload": "",
@@ -8544,39 +7800,804 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 185.16668701171875,
-        "y": 1067,
+        "x": 520,
+        "y": 1060,
         "wires": [
             [
-                "e288ba2a.d005e8"
+                "22295877.bc5ee8"
             ]
         ]
     },
     {
-        "id": "1bbe928d.7925cd",
-        "type": "debug",
-        "z": "922b9d9f.0323",
+        "id": "27fab859.e6eeb8",
+        "type": "trigger-state",
+        "z": "b01a2cb9.9baef",
         "name": "",
-        "active": false,
+        "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "device_tracker.beacon_ibeacon_car",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "676f8128.3fb54"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "676f8128.3fb54",
+        "type": "switch",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "not_home",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 440,
+        "wires": [
+            [
+                "a8e8c145.d8dbe"
+            ],
+            [
+                "c2986ce4.93d3d",
+                "2075f481.b7b15c"
+            ]
+        ]
+    },
+    {
+        "id": "c2986ce4.93d3d",
+        "type": "api-call-service",
+        "z": "b01a2cb9.9baef",
+        "name": "Car On",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.in_car",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 760,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e397baaa.14c508",
+        "type": "debug",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 330.0000057220459,
-        "y": 1143.000033378601,
+        "complete": "true",
+        "targetType": "full",
+        "x": 710,
+        "y": 520,
         "wires": []
     },
     {
-        "id": "984b95a5.1f82b8",
-        "type": "server-events",
-        "z": "922b9d9f.0323",
-        "name": "",
+        "id": "e7209131.24c18",
+        "type": "api-call-service",
+        "z": "b01a2cb9.9baef",
+        "name": "Work Off",
         "server": "a0b35919.2f8bf8",
-        "x": 105.16667175292969,
-        "y": 1190,
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.at_work",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1100,
+        "y": 560,
         "wires": [
             [
-                "1bbe928d.7925cd"
+                "6a636e32.a6572"
+            ]
+        ]
+    },
+    {
+        "id": "7fd4bb27.79d294",
+        "type": "api-call-service",
+        "z": "b01a2cb9.9baef",
+        "name": "Work On",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.at_work",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1100,
+        "y": 480,
+        "wires": [
+            [
+                "6b2415c5.9442bc"
+            ]
+        ]
+    },
+    {
+        "id": "c7831ebe.3185b",
+        "type": "api-call-service",
+        "z": "b01a2cb9.9baef",
+        "name": "Set AtHome",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "device_tracker",
+        "service": "see",
+        "entityId": "",
+        "data": "{\"dev_id\":\"vincent\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 1090,
+        "y": 640,
+        "wires": [
+            [
+                "afd7eb5d.714838"
+            ]
+        ]
+    },
+    {
+        "id": "ea50ab90.4f9c18",
+        "type": "switch",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "home",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "not_home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 900,
+        "y": 680,
+        "wires": [
+            [
+                "c7831ebe.3185b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b7655b64.498828",
+        "type": "switch",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "not_home",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 520,
+        "wires": [
+            [
+                "e7209131.24c18"
+            ],
+            [
+                "7fd4bb27.79d294"
+            ]
+        ]
+    },
+    {
+        "id": "5aba5b9a.b3c3c4",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "f4f34383.c51b7",
+        "name": "",
+        "env": [],
+        "x": 560,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b1ad973f.5ccca8",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "Enter",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "Car",
+                "type": "str"
+            }
+        ],
+        "x": 970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "468a4ba3.3d1444",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "Exit",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "Car",
+                "type": "str"
+            }
+        ],
+        "x": 1330,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6b2415c5.9442bc",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "Enter",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "Work",
+                "type": "str"
+            }
+        ],
+        "x": 1310,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6a636e32.a6572",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "Exit",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "Work",
+                "type": "str"
+            }
+        ],
+        "x": 1310,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "afd7eb5d.714838",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "env": [
+            {
+                "name": "message",
+                "value": "Exit",
+                "type": "str"
+            },
+            {
+                "name": "topic",
+                "value": "Home",
+                "type": "str"
+            }
+        ],
+        "x": 1310,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "8c98bbfc.f460f8",
+        "type": "debug",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1030,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c2706fd.db2109",
+        "type": "server-state-changed",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.kitchen_luminance",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "4ca1892e.cfc2b8",
+                "544bde6e.f051a"
+            ]
+        ]
+    },
+    {
+        "id": "dbbba586.ab9aa",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Set Luminance",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "keuken",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "PIR",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "Luminance",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "ZWave",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 620,
+        "wires": [
+            [
+                "38d26b7.a551a94",
+                "356947e3.8f2968"
+            ]
+        ]
+    },
+    {
+        "id": "356947e3.8f2968",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "env": [
+            {
+                "name": "topic",
+                "value": "Luminance",
+                "type": "str"
+            }
+        ],
+        "x": 940,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "41065bb6.208fe4",
+        "type": "api-call-service",
+        "z": "922b9d9f.0323",
+        "name": "Barlicht on",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.bar",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 750,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c12e0d33.91dee",
+        "type": "api-current-state",
+        "z": "922b9d9f.0323",
+        "name": "If barlicht off",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": true,
+        "entity_id": "switch.zwave_bar",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 370,
+        "y": 680,
+        "wires": [
+            [
+                "8b9219cc.bb1308"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8b9219cc.bb1308",
+        "type": "delay",
+        "z": "922b9d9f.0323",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "3",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 560,
+        "y": 680,
+        "wires": [
+            [
+                "725376da.5755b8",
+                "41065bb6.208fe4",
+                "6f69cf67.550bc"
+            ]
+        ]
+    },
+    {
+        "id": "4ca1892e.cfc2b8",
+        "type": "debug",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 450,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "544bde6e.f051a",
+        "type": "api-current-state",
+        "z": "f8c3d2e.ff7853",
+        "name": "If barlicht off",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": true,
+        "entity_id": "switch.zwave_bar",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "dbbba586.ab9aa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a8e8c145.d8dbe",
+        "type": "delay",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1000,
+        "y": 340,
+        "wires": [
+            [
+                "1e80c95e.4537b7"
+            ]
+        ]
+    },
+    {
+        "id": "2075f481.b7b15c",
+        "type": "change",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 400,
+        "wires": [
+            [
+                "a8e8c145.d8dbe"
+            ]
+        ]
+    },
+    {
+        "id": "de2a3f5b.f1d98",
+        "type": "api-current-state",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.target_temperature",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "ae238043.0b1428"
+            ]
+        ]
+    },
+    {
+        "id": "5e8a0c2d.af3824",
+        "type": "inject",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "de2a3f5b.f1d98"
+            ]
+        ]
+    },
+    {
+        "id": "c32dc2f1.29a6a",
+        "type": "debug",
+        "z": "f8c3d2e.ff7853",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1030,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ae238043.0b1428",
+        "type": "change",
+        "z": "f8c3d2e.ff7853",
+        "name": "Target temp - Anna",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "target",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "anna",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "devicetype",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "messagetype",
+                "pt": "msg",
+                "to": "measurement",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "system",
+                "pt": "msg",
+                "to": "thermostaat",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "data.state",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 340,
+        "wires": [
+            [
+                "c32dc2f1.29a6a",
+                "38d26b7.a551a94"
             ]
         ]
     }
