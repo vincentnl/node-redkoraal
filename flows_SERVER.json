@@ -42,16 +42,16 @@
         "info": ""
     },
     {
-        "id": "375d1e4f.6a9d22",
+        "id": "922b9d9f.0323",
         "type": "tab",
-        "label": "Devices Net",
+        "label": "Keuken - Kamer - Terras",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "922b9d9f.0323",
+        "id": "375d1e4f.6a9d22",
         "type": "tab",
-        "label": "Keuken - Kamer - Terras",
+        "label": "Devices Net",
         "disabled": false,
         "info": ""
     },
@@ -1382,26 +1382,6 @@
         ]
     },
     {
-        "id": "c1a9dd4b.ece17",
-        "type": "inject",
-        "z": "aaabbee3.5276e",
-        "name": "",
-        "topic": "",
-        "payload": "149.2",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 121,
-        "y": 461,
-        "wires": [
-            [
-                "215560f7.86563"
-            ]
-        ]
-    },
-    {
         "id": "215560f7.86563",
         "type": "function",
         "z": "aaabbee3.5276e",
@@ -1497,7 +1477,8 @@
         "wires": [
             [
                 "9e93c185.1fc98",
-                "dcf96f6.c0f439"
+                "dcf96f6.c0f439",
+                "43551075.9d2db"
             ]
         ]
     },
@@ -3209,8 +3190,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 507.0094909667969,
-        "y": 153.5511531829834,
+        "x": 520,
+        "y": 160,
         "wires": [
             []
         ]
@@ -3320,19 +3301,19 @@
                 "value": ""
             }
         ],
-        "entityid": "input_boolean.at_home",
+        "entityid": "group.at_home",
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
-                "id": "rk0uk4vxuei",
+                "id": "aqv53zdmg",
                 "targetType": "this_entity",
                 "targetValue": "",
                 "propertyType": "current_state",
                 "propertyValue": "new_state.state",
                 "comparatorType": "is",
                 "comparatorValueDatatype": "str",
-                "comparatorValue": "on"
+                "comparatorValue": "home"
             }
         ],
         "constraintsmustmatch": "all",
@@ -4226,140 +4207,6 @@
         "wires": []
     },
     {
-        "id": "997a79fc.25f228",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone leaves home",
-        "url": "/iPhoneLeavesHome",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 133.8333282470703,
-        "y": 2334.466667175293,
-        "wires": [
-            [
-                "2b8bac95.3bdf54",
-                "c220c284.8a8b2"
-            ]
-        ]
-    },
-    {
-        "id": "2b8bac95.3bdf54",
-        "type": "http response",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 300.83341217041016,
-        "y": 2369.2001881599426,
-        "wires": []
-    },
-    {
-        "id": "e3fd4a43.160c88",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone enters home",
-        "url": "/iPhoneEntersHome",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 138,
-        "y": 2404,
-        "wires": [
-            [
-                "2b8bac95.3bdf54",
-                "949fe107.bc255"
-            ]
-        ]
-    },
-    {
-        "id": "ac116c97.14332",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 566.0000152587891,
-        "y": 2339.000165939331,
-        "wires": []
-    },
-    {
-        "id": "949fe107.bc255",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Enter home",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Enter home",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 358.83334732055664,
-        "y": 2404.933371782303,
-        "wires": [
-            [
-                "ac116c97.14332"
-            ]
-        ]
-    },
-    {
-        "id": "c220c284.8a8b2",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Exit home",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Exit home",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 2335.9999294281006,
-        "wires": [
-            [
-                "ac116c97.14332"
-            ]
-        ]
-    },
-    {
-        "id": "8d18cccc.79947",
-        "type": "comment",
-        "z": "b01a2cb9.9baef",
-        "name": "GpsGate",
-        "info": "",
-        "x": 64.83332824707031,
-        "y": 2284.9333419799805,
-        "wires": []
-    },
-    {
         "id": "186610b0.fe213f",
         "type": "trigger-state",
         "z": "c13cf3fe.71f31",
@@ -4674,254 +4521,6 @@
         ]
     },
     {
-        "id": "2ff456e8.e281da",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone leaves Work",
-        "url": "/iPhoneLeavesWork",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 138.0142059326172,
-        "y": 2485.1875,
-        "wires": [
-            [
-                "5f199906.d022c8",
-                "65d120d2.131f2"
-            ]
-        ]
-    },
-    {
-        "id": "5f199906.d022c8",
-        "type": "http response",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 305.01428985595703,
-        "y": 2519.9210209846497,
-        "wires": []
-    },
-    {
-        "id": "53138248.a9d80c",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone enters work",
-        "url": "/iPhoneEntersWork",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 142.18087768554688,
-        "y": 2554.720832824707,
-        "wires": [
-            [
-                "5f199906.d022c8",
-                "71d20cbd.8bc594"
-            ]
-        ]
-    },
-    {
-        "id": "7cbf52e1.ede00c",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 570.1808929443359,
-        "y": 2489.720998764038,
-        "wires": []
-    },
-    {
-        "id": "71d20cbd.8bc594",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Enter work",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Enter work",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 363.0142250061035,
-        "y": 2555.65420460701,
-        "wires": [
-            [
-                "7cbf52e1.ede00c"
-            ]
-        ]
-    },
-    {
-        "id": "65d120d2.131f2",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Exit work",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Exit work",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 364.1808776855469,
-        "y": 2486.7207622528076,
-        "wires": [
-            [
-                "7cbf52e1.ede00c"
-            ]
-        ]
-    },
-    {
-        "id": "eaa26b03.351628",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone leaves Commute",
-        "url": "/iPhoneLeavesCommute",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 162.0142059326172,
-        "y": 2635.82373046875,
-        "wires": [
-            [
-                "db897405.ed75b8",
-                "e417801b.4fc1"
-            ]
-        ]
-    },
-    {
-        "id": "db897405.ed75b8",
-        "type": "http response",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 360.01428604125977,
-        "y": 2670.557346343994,
-        "wires": []
-    },
-    {
-        "id": "ff50e39c.f8779",
-        "type": "http in",
-        "z": "b01a2cb9.9baef",
-        "name": "iPhone enters Commute",
-        "url": "/iPhoneEntersCommute",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 166.18087768554688,
-        "y": 2705.357063293457,
-        "wires": [
-            [
-                "db897405.ed75b8",
-                "841de82e.3946c8"
-            ]
-        ]
-    },
-    {
-        "id": "6d93f093.2756c",
-        "type": "subflow:fd7dbe32.1f2d2",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "x": 574.1808929443359,
-        "y": 2640.357229232788,
-        "wires": []
-    },
-    {
-        "id": "841de82e.3946c8",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Enter Commute",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Enter Commute",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 377.0142250061035,
-        "y": 2706.29043507576,
-        "wires": [
-            [
-                "6d93f093.2756c"
-            ]
-        ]
-    },
-    {
-        "id": "e417801b.4fc1",
-        "type": "change",
-        "z": "b01a2cb9.9baef",
-        "name": "Exit Commute",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Exit Commute",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "GpsGate:iPhone",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 388.1808776855469,
-        "y": 2637.3569927215576,
-        "wires": [
-            [
-                "6d93f093.2756c"
-            ]
-        ]
-    },
-    {
         "id": "499c45ba.34099c",
         "type": "time-range-switch",
         "z": "c13cf3fe.71f31",
@@ -4985,95 +4584,43 @@
         ]
     },
     {
-        "id": "28e50ac6.e84836",
-        "type": "trigger-state",
-        "z": "b01a2cb9.9baef",
-        "name": "Shutdown",
-        "server": "a0b35919.2f8bf8",
-        "entityid": "input_boolean.momentary_shutdown_action",
-        "debugenabled": false,
-        "constraints": [],
-        "constraintsmustmatch": "all",
-        "outputs": 2,
-        "customoutputs": [],
-        "x": 122.01953125,
-        "y": 2857.00390625,
-        "wires": [
-            [
-                "a5edebd5.0afbe8"
-            ],
-            [
-                "3673fc23.23dea4"
-            ]
-        ]
-    },
-    {
-        "id": "a5edebd5.0afbe8",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Shutdown Bedmode",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "toggle",
-        "data": "{   \"entity_id\": \"input_boolean.momentary_shutdown_bedmode_action\" }",
-        "mergecontext": "",
-        "x": 343.8959655761719,
-        "y": 2815.9310569763184,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3673fc23.23dea4",
-        "type": "api-call-service",
-        "z": "b01a2cb9.9baef",
-        "name": "Shutdown non-Bedmode",
-        "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "toggle",
-        "data": "{   \"entity_id\": \"input_boolean.momentary_shutdown_nonbedmode_action\" }",
-        "mergecontext": "",
-        "x": 350.02486419677734,
-        "y": 2877.2749824523926,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "70b402b8.97ffcc",
-        "type": "comment",
-        "z": "b01a2cb9.9baef",
-        "name": "Shutdown",
-        "info": "",
-        "x": 65,
-        "y": 2796.00390625,
-        "wires": []
-    },
-    {
         "id": "24c196fe.8ef9aa",
         "type": "trigger-state",
         "z": "b01a2cb9.9baef",
         "name": "AtHome",
         "server": "a0b35919.2f8bf8",
-        "entityid": "input_boolean.at_home",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "group.at_home",
+        "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [
             {
-                "id": "rk0uk4vxuei",
+                "id": "rarp5c9wip",
                 "targetType": "this_entity",
                 "targetValue": "",
                 "propertyType": "current_state",
                 "propertyValue": "new_state.state",
                 "comparatorType": "is",
                 "comparatorValueDatatype": "str",
-                "comparatorValue": "on"
+                "comparatorValue": "home"
             }
         ],
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
-        "x": 100.99999618530273,
-        "y": 3027.2781143188477,
+        "outputinitially": false,
+        "x": 140,
+        "y": 1220,
         "wires": [
             [],
             [
@@ -5104,8 +4651,8 @@
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
-        "x": 107.93559265136719,
-        "y": 3109.0432872772217,
+        "x": 146.93559646606445,
+        "y": 1301.765172958374,
         "wires": [
             [
                 "71796e51.26c8d"
@@ -5119,8 +4666,8 @@
         "z": "b01a2cb9.9baef",
         "name": "Initiate shutdowns on status",
         "info": "",
-        "x": 125,
-        "y": 2952.278263092041,
+        "x": 164.00000381469727,
+        "y": 1145.0001487731934,
         "wires": []
     },
     {
@@ -5129,12 +4676,19 @@
         "z": "b01a2cb9.9baef",
         "name": "Shutdown Bedmode",
         "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "toggle",
-        "data": "{   \"entity_id\": \"input_boolean.momentary_shutdown_bedmode_action\" }",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_off",
+        "entityId": "group.shut_down_except_bedroom",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 490.00001525878906,
-        "y": 3110.2779598236084,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 529.0000190734863,
+        "y": 1302.9998455047607,
         "wires": [
             []
         ]
@@ -5145,12 +4699,19 @@
         "z": "b01a2cb9.9baef",
         "name": "Shutdown Full",
         "server": "a0b35919.2f8bf8",
-        "service_domain": "input_boolean",
-        "service": "toggle",
-        "data": "{   \"entity_id\": \"input_boolean.momentary_shutdown_action\" }",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_off",
+        "entityId": "group.shut_down_full",
+        "data": "",
+        "dataType": "json",
         "mergecontext": "",
-        "x": 297.00001525878906,
-        "y": 3024.278263092041,
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 336.0000190734863,
+        "y": 1217.0001487731934,
         "wires": [
             []
         ]
@@ -5173,7 +4734,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.momentary_shutdown_bedmode_action",
+        "entityidfilter": "group.shut_down_except_bedroom",
         "entityidfiltertype": "substring",
         "outputinitially": false,
         "state_type": "str",
@@ -5196,14 +4757,23 @@
         "z": "b01a2cb9.9baef",
         "name": "Block If Guests",
         "server": "a0b35919.2f8bf8",
-        "outputs": 1,
+        "version": "1",
+        "outputs": 2,
         "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
         "override_topic": true,
         "entity_id": "input_boolean.guests_home",
-        "override_payload": true,
-        "x": 271.0000457763672,
-        "y": 3110.095697402954,
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 310.00004959106445,
+        "y": 1302.8175830841064,
         "wires": [
+            [],
             [
                 "fb5fe19f.4e76f"
             ]
@@ -5421,20 +4991,6 @@
         ]
     },
     {
-        "id": "c50dd262.902f6",
-        "type": "debug",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 294.16668701171875,
-        "y": 2761,
-        "wires": []
-    },
-    {
         "id": "2dcc3fb2.c3e27",
         "type": "trigger-state",
         "z": "922b9d9f.0323",
@@ -5508,8 +5064,8 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": false,
-        "x": 750,
-        "y": 760,
+        "x": 970,
+        "y": 740,
         "wires": [
             []
         ]
@@ -5528,11 +5084,12 @@
         "reset": "",
         "bytopic": "all",
         "name": "",
-        "x": 561.1666793823242,
-        "y": 783.3335576057434,
+        "x": 750,
+        "y": 780,
         "wires": [
             [
-                "71de6267.85898c"
+                "71de6267.85898c",
+                "2e0e8af7.e3f686"
             ]
         ]
     },
@@ -5556,7 +5113,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 370,
-        "y": 720,
+        "y": 780,
         "wires": [
             [
                 "8b9219cc.bb1308"
@@ -6676,8 +6233,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 380,
+        "x": 490,
+        "y": 400,
         "wires": [
             [
                 "38d26b7.a551a94"
@@ -6694,7 +6251,7 @@
                 "t": "set",
                 "p": "location",
                 "pt": "msg",
-                "to": "terras",
+                "to": "internet",
                 "tot": "str"
             },
             {
@@ -7992,7 +7549,7 @@
         "id": "ea50ab90.4f9c18",
         "type": "switch",
         "z": "b01a2cb9.9baef",
-        "name": "",
+        "name": "If home",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -8010,7 +7567,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 900,
+        "x": 910,
         "y": 680,
         "wires": [
             [
@@ -8082,27 +7639,6 @@
         "wires": []
     },
     {
-        "id": "468a4ba3.3d1444",
-        "type": "subflow:bfd62bd3.8ae858",
-        "z": "b01a2cb9.9baef",
-        "name": "",
-        "env": [
-            {
-                "name": "message",
-                "value": "Exit",
-                "type": "str"
-            },
-            {
-                "name": "topic",
-                "value": "Car",
-                "type": "str"
-            }
-        ],
-        "x": 1330,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "6b2415c5.9442bc",
         "type": "subflow:bfd62bd3.8ae858",
         "z": "b01a2cb9.9baef",
@@ -8152,7 +7688,7 @@
         "env": [
             {
                 "name": "message",
-                "value": "Exit",
+                "value": "Enter",
                 "type": "str"
             },
             {
@@ -8599,6 +8135,158 @@
                 "c32dc2f1.29a6a",
                 "38d26b7.a551a94"
             ]
+        ]
+    },
+    {
+        "id": "283afe25.1103a2",
+        "type": "server-state-changed",
+        "z": "aaabbee3.5276e",
+        "name": "",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.withings_weight_kg_vincent",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 220,
+        "y": 400,
+        "wires": [
+            [
+                "215560f7.86563"
+            ]
+        ]
+    },
+    {
+        "id": "43551075.9d2db",
+        "type": "subflow:bfd62bd3.8ae858",
+        "z": "aaabbee3.5276e",
+        "name": "",
+        "x": 740,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c162b729.990fb8",
+        "type": "inject",
+        "z": "b01a2cb9.9baef",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 179.00000381469727,
+        "y": 1412.7218856811523,
+        "wires": [
+            [
+                "71796e51.26c8d"
+            ]
+        ]
+    },
+    {
+        "id": "a70cf05a.f85cd",
+        "type": "trigger-state",
+        "z": "1f8a59d.c5c0ca6",
+        "name": "AtWork",
+        "server": "a0b35919.2f8bf8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.at_work",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "id": "aqv53zdmg",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "propertyValue": "new_state.state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "home"
+            }
+        ],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "x": 80,
+        "y": 400,
+        "wires": [
+            [],
+            [
+                "32d96738.1da8f8"
+            ]
+        ]
+    },
+    {
+        "id": "32d96738.1da8f8",
+        "type": "time-range-switch",
+        "z": "1f8a59d.c5c0ca6",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "startTime": "16:00",
+        "endTime": "19:30",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "c742af14.e7f52"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2e0e8af7.e3f686",
+        "type": "api-call-service",
+        "z": "922b9d9f.0323",
+        "name": "Barlicht on",
+        "server": "a0b35919.2f8bf8",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.bar",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "msg",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 840,
+        "wires": [
+            []
         ]
     }
 ]
