@@ -2,7 +2,14 @@
     "name": "Node-Red",
     "description": "Node-Red",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-node-rbe": "0.2.8",
+        "node-red-node-mysql": "0.0.19",
+        "node-red-contrib-weekday": "0.1.0",
+        "node-red-contrib-time-range-switch": "1.0.0",
+        "node-red-contrib-home-assistant-websocket": "0.21.5",
+        "node-red-contrib-bigtimer": "2.2.6"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows_SERVER.json",
